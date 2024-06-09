@@ -1,4 +1,4 @@
-# Hi there, I'm Praneeth Reddy 👋
+# Hi there, I'm Praneeth Reddy <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
 ![GitHub Profile Header](imgs/DckXjdnXcAAJP4E.jpeg)
 
@@ -46,7 +46,9 @@ I'm a Computer Science student with a passion for learning new technologies and 
 ## 🐾 Cat-tastic Fun Fact
 Did you know? Cats sleep for about 16 hours a day to recharge their "batteries" just like I recharge my brain with coffee and coding!
 
-![Cat Napping](https://media.giphy.com/media/12HZukMBlutpoQ/giphy.gif)
+<p align="center">
+  <img src="https://media.giphy.com/media/12HZukMBlutpoQ/giphy.gif" alt="Cat Coding" width="250"/>
+</p>
 
 ## 🏆 My Projects
 Check out some of my purr-fect projects:
@@ -58,6 +60,18 @@ Check out some of my purr-fect projects:
 ## Did you know? 🤔
 I love to code as much as my cat loves to nap! And that's a lot! 😸
 
-![Cat Coding](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)
+<p align="center">
+  <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cat Coding" width="250"/>
+</p>
+
 ## 📫 How to Reach Me
-Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/yourprofile/) or send me an email at praneeth@example.com.
+Let's connect and talk about tech, cats, or anything in between!
+<p align="left">
+  <a href="https://instagram.com/_.prx.__" target="_blank"><img src="https://img.shields.io/badge/-Instagram-E4405F?style=flat&logo=instagram&logoColor=white" alt="Instagram" /></a>
+  <a href="https://twitter.com/Praneeth_on_X" target="_blank"><img src="https://img.shields.io/badge/-Twitter-1DA1F2?style=flat&logo=twitter&logoColor=white" alt="Twitter" /></a>
+  <a href="https://linkedin.com/in/praneeth-reddy-a85839311" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="mailto:praneethreddy.pr003@gmail.com"><img src="https://img.shields.io/badge/-Email-D14836?style=flat&logo=gmail&logoColor=white" alt="Email" /></a>
+</p>
+Feel free to drop me a message, and I'll respond faster than my cat jumps for treats! 😺
+
+
