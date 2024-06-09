@@ -5,8 +5,6 @@
 ## 🐱 About Me
 I'm a Computer Science student with a passion for learning new technologies and solving challenging problems. When I'm not coding, you can find me exploring the latest trends in tech, contributing to open source, or playing with my cat 🐾.
 
-![Coding](https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif)
-
 ## 🛠️ Skills & Technologies
 ### Languages
 <p align="left">
@@ -38,11 +36,6 @@ I'm a Computer Science student with a passion for learning new technologies and 
   <img src="https://img.shields.io/badge/-Linux-FCC624?style=flat&logo=linux&logoColor=black" alt="Linux" />
 </p>
 
-### A Fun Fact
-Did you know? I love to code as much as my cat loves to nap! And that's a lot! 😸
-
-![Cat Coding](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)
-
 ## 📈 GitHub Stats
 <p>
   <img src="https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=radical" alt="Praneeth's GitHub Stats" />
@@ -62,5 +55,9 @@ Check out some of my purr-fect projects:
 - [**Project 2**](https://github.com/yourusername/project2): Another project that solves interesting problems.
 - [**Project 3**](https://github.com/yourusername/project3): A fun project with lots of potential.
 
+## Did you know? 🤔
+I love to code as much as my cat loves to nap! And that's a lot! 😸
+
+![Cat Coding](https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)
 ## 📫 How to Reach Me
 Feel free to reach out to me on [LinkedIn](https://www.linkedin.com/in/yourprofile/) or send me an email at praneeth@example.com.
