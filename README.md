@@ -1,6 +1,6 @@
 # Hi there, I'm Praneeth Reddy 👋
 
-![GitHub Profile Header](https://github.com/yourusername/yourrepositoryname/blob/main/yourimage.jpg)
+![GitHub Profile Header](imgs/DckXjdnXcAAJP4E.jpeg)
 
 ## 🐱 About Me
 I'm a Computer Science student with a passion for learning new technologies and solving challenging problems. When I'm not coding, you can find me exploring the latest trends in tech, contributing to open source, or playing with my cat 🐾.
