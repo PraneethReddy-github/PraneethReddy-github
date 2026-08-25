@@ -9,23 +9,17 @@
     </picture>
   </a>
 
-  <br><br>
-
   <!-- RETRO TERMINAL THEMED LIVE GITHUB STATS FRAME -->
   <a href="https://github.com/PraneethReddy-github">
-    <img src="./github_stats.svg" alt="Retro Terminal GitHub Stats" width="100%">
+    <img src="./github_stats.svg" alt="Retro Terminal GitHub Stats" width="100%" style="margin-top: 15px;">
   </a>
 
-  <br><br>
-
   <!-- CYBER CAT EYES GIF -->
-  <img src="./imgs/cat-eyes.gif" alt="Cyber Cat Eyes" width="100%" style="border-radius: 14px; border: 1px solid #1E293B;">
+  <img src="./imgs/cat-eyes.gif" alt="Cyber Cat Eyes" width="100%" style="border-radius: 14px; border: 1px solid #1E293B; margin-top: 15px;">
 
-  <br><br>
-
-  <!-- FULL-WIDTH CONSISTENT RETRO GLOW & GLITCH VISITOR COUNTER (WITHOUT TOP TITLEBAR TAB) -->
+  <!-- GLOWING VISITOR COUNTER -->
   <a href="https://github.com/PraneethReddy-github">
-    <img src="./visitor_counter.svg" alt="Retro Glowing Visitor Counter" width="100%">
+    <img src="./visitor_counter.svg" alt="Profile Visitors" width="100%" style="margin-top: 15px;">
   </a>
 
 </div>

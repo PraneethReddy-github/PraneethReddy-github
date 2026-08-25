@@ -55,7 +55,7 @@
 
 <g id="visitorBody" filter="url(#glowCyan)">
   <text x="500.0" y="38" text-anchor="middle" fill="#38BDF8" font-family="'Fira Code', 'JetBrains Mono', monospace" font-size="14.5" font-weight="bold" letter-spacing="1.8">👁️ PROFILE VISITORS</text>
-  <image href="https://profile-counter.glitch.me/PraneethReddy-github/count.svg" x="410" y="48" width="180" height="45"/>
+  <text x="500.0" y="80" text-anchor="middle" fill="#F8FAFC" font-family="'Fira Code', 'JetBrains Mono', Consolas, monospace" font-size="36" font-weight="900" letter-spacing="5">0</text>
 </g>
 
 <!-- RETRO GLITCH OVERLAY ACROSS FULL WIDTH -->

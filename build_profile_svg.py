@@ -1,5 +1,6 @@
 import os
 from html import escape
+import urllib.request
 
 FONT = "'Fira Code', 'JetBrains Mono', 'Cascadia Mono', 'Courier New', monospace"
 
@@ -387,20 +388,20 @@ def generate_svg(is_dark=True):
         white-space: pre;
         dominant-baseline: auto;
     }}
-    .prompt-user {{ fill: #36E3A3; font-size: 14px; font-weight: 700; letter-spacing: 0.05px; }}
-    .prompt-sep  {{ fill: #64748B; font-size: 14px; font-weight: 500; }}
-    .prompt-path {{ fill: #38BDF8; font-size: 14px; font-weight: 700; }}
-    .command     {{ fill: #F8FAFC; font-size: 14px; font-weight: 700; letter-spacing: 0.03px; }}
-    .name        {{ fill: #38BDF8; font-size: 16px; font-weight: 800; letter-spacing: 0.6px; }}
-    .key         {{ fill: #34D399; font-size: 13.5px; font-weight: 700; letter-spacing: 0.05px; }}
-    .branch      {{ fill: #64748B; font-size: 14px; font-weight: 700; }}
-    .tag         {{ fill: #38BDF8; font-size: 14px; font-weight: 700; }}
-    .arrow       {{ fill: #34D399; font-size: 18px; font-weight: 800; }}
-    .muted-bold  {{ fill: #64748B; font-size: 13px; font-weight: 700; }}
-    .venue       {{ fill: #38BDF8; font-size: 13px; font-weight: 700; }}
-    .value       {{ fill: #D7DEE8; font-size: 13px; font-weight: 450; letter-spacing: 0; }}
+    .prompt-user {{ fill: #36E3A3; font-size: 16px; font-weight: 700; letter-spacing: 0.05px; }}
+    .prompt-sep  {{ fill: #64748B; font-size: 16px; font-weight: 500; }}
+    .prompt-path {{ fill: #38BDF8; font-size: 16px; font-weight: 700; }}
+    .command     {{ fill: #F8FAFC; font-size: 16.5px; font-weight: 700; letter-spacing: 0.03px; }}
+    .name        {{ fill: #38BDF8; font-size: 17px; font-weight: 800; letter-spacing: 0.6px; }}
+    .key         {{ fill: #34D399; font-size: 15px; font-weight: 700; letter-spacing: 0.05px; }}
+    .branch      {{ fill: #64748B; font-size: 15px; font-weight: 700; }}
+    .tag         {{ fill: #38BDF8; font-size: 15px; font-weight: 700; }}
+    .arrow       {{ fill: #34D399; font-size: 19px; font-weight: 800; }}
+    .muted-bold  {{ fill: #64748B; font-size: 14.5px; font-weight: 700; }}
+    .venue       {{ fill: #38BDF8; font-size: 14.5px; font-weight: 700; }}
+    .value       {{ fill: #D7DEE8; font-size: 16px; font-weight: 450; letter-spacing: 0; }}
     .cursor      {{ fill: #34E6A5; }}
-    .term-title  {{ font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', Consolas, monospace; font-size: 12.5px; fill: #64748B; letter-spacing: 0.5px; font-weight: bold; }}
+    .term-title  {{ font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', Consolas, monospace; font-size: 13.5px; fill: #64748B; letter-spacing: 0.5px; font-weight: bold; }}
   </style>
 
 {retro_glitch_defs}
@@ -455,9 +456,28 @@ def generate_svg(is_dark=True):
 # ============================================================
 # RETRO TERMINAL THEMED GITHUB STATS FRAME SVG
 # ============================================================
+def fetch_svg(url):
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        return urllib.request.urlopen(req, timeout=30).read().decode('utf-8')
+    except Exception as e:
+        print(f"Error fetching SVG from {url}: {e}")
+        return ""
+
 def generate_github_stats_svg():
     width = 1000
-    height = 220
+    height = 475
+    
+    print("Fetching live stats for embedded SVG generation...")
+    stats_url = "https://github-stats-extended.vercel.app/api?username=PraneethReddy-github&show_icons=true&theme=tokyonight&hide_border=true&title_color=38BDF8&icon_color=34D399&text_color=E2E8F0&bg_color=00000000"
+    langs_url = "https://github-stats-extended.vercel.app/api/top-langs/?username=PraneethReddy-github&layout=compact&theme=tokyonight&hide_border=true&title_color=38BDF8&text_color=E2E8F0&bg_color=00000000"
+    streak_url = "https://github-readme-streak-stats.herokuapp.com/?user=PraneethReddy-github&theme=tokyonight&hide_border=true&background=00000000&ring=38BDF8&fire=38BDF8&currStreakLabel=38BDF8"
+    
+    stats_svg = fetch_svg(stats_url)
+    langs_svg = fetch_svg(langs_url)
+    streak_svg = fetch_svg(streak_url)
+    print("Successfully fetched stats!")
+    
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
 <defs>
   <radialGradient id="statsBgGlow" cx="50%" cy="15%" r="85%">
@@ -478,7 +498,7 @@ def generate_github_stats_svg():
 
 <!-- BASE CONTAINER & BACKGROUND -->
 <rect width="{width}" height="{height}" rx="14" fill="url(#statsBgGlow)"/>
-<rect x="0" y="36" width="{width}" height="184" fill="url(#statsScanlines)"/>
+<rect x="0" y="36" width="{width}" height="{height-36}" fill="url(#statsScanlines)"/>
 
 <!-- ANCHORED TITLEBAR HEADER -->
 <g id="statsTitlebar">
@@ -494,9 +514,16 @@ def generate_github_stats_svg():
 <rect x="1" y="1" width="{width-2}" height="{height-2}" rx="13" fill="none" stroke="#1E293B" stroke-width="1.2"/>
 
 <!-- EMBEDDED LIVE GITHUB STATS & TOP LANGUAGES CARDS -->
-<g transform="translate(15, 42)" filter="url(#glowCyan)">
-  <image href="https://github-readme-stats.vercel.app/api?username=PraneethReddy-github&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;title_color=38BDF8&amp;icon_color=34D399&amp;text_color=E2E8F0&amp;bg_color=0C0F17" x="0" y="0" width="480" height="165"/>
-  <image href="https://github-readme-stats.vercel.app/api/top-langs/?username=PraneethReddy-github&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true&amp;title_color=38BDF8&amp;text_color=E2E8F0&amp;bg_color=0C0F17" x="490" y="0" width="480" height="165"/>
+<g transform="translate(0, 42)" filter="url(#glowCyan)">
+  <g transform="translate(101.5, 0)">
+    {stats_svg}
+  </g>
+  <g transform="translate(598.5, 15)">
+    {langs_svg}
+  </g>
+  <g transform="translate(252.5, 235)">
+    {streak_svg}
+  </g>
 </g>
 </svg>
 """
@@ -507,6 +534,16 @@ def generate_github_stats_svg():
 def generate_visitor_counter_svg():
     width = 1000
     height = 110
+    
+    print("Fetching live visitor count for embedded SVG generation...")
+    vis_url = "https://komarev.com/ghpvc/?username=PraneethReddy-github&style=for-the-badge&color=38BDF8&label=PROFILE+VISITORS&label_color=00000000"
+    vis_svg = fetch_svg(vis_url)
+    
+    import re
+    matches = re.findall(r'<text[^>]*>([^<]+)</text>', vis_svg)
+    count = matches[-1] if matches else "0"
+    print(f"Successfully fetched visitor count: {count}")
+    
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
 <defs>
   <radialGradient id="visBgGlow" cx="50%" cy="15%" r="85%">
@@ -531,7 +568,7 @@ def generate_visitor_counter_svg():
 
 <g id="visitorBody" filter="url(#glowCyan)">
   <text x="{width/2}" y="38" text-anchor="middle" fill="#38BDF8" font-family="'Fira Code', 'JetBrains Mono', monospace" font-size="14.5" font-weight="bold" letter-spacing="1.8">👁️ PROFILE VISITORS</text>
-  <image href="https://profile-counter.glitch.me/PraneethReddy-github/count.svg" x="410" y="48" width="180" height="45"/>
+  <text x="{width/2}" y="80" text-anchor="middle" fill="#F8FAFC" font-family="'Fira Code', 'JetBrains Mono', Consolas, monospace" font-size="36" font-weight="900" letter-spacing="5">{count}</text>
 </g>
 
 <!-- RETRO GLITCH OVERLAY ACROSS FULL WIDTH -->
