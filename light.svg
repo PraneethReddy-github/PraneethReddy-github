@@ -1,0 +1,271 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="660" viewBox="0 0 1000 660">
+<defs>
+  <radialGradient id="bgGlow" cx="50%" cy="15%" r="85%">
+    <stop offset="0%" stop-color="#F8FAFC"/>
+    <stop offset="100%" stop-color="#F1F5F9"/>
+  </radialGradient>
+
+  <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+    <rect width="4" height="1" fill="#FFFFFF" opacity="0.012"/>
+  </pattern>
+
+  <clipPath id="bodyArea"><rect x="0" y="40" width="1000" height="620"/></clipPath>
+
+
+<!-- RETRO PHOSPHOR GLOW -->
+<filter id="glowCyan" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="blur1"/>
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur2"/>
+    <feFlood flood-color="#20DFFF" flood-opacity="0.38" result="cyanGlow"/>
+    <feComposite in="cyanGlow" in2="blur2" operator="in" result="cyanComposite"/>
+    <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="cyanComposite"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+</filter>
+
+<filter id="glowMint" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1.3" result="blur1"/>
+    <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur2"/>
+    <feFlood flood-color="#36E3A3" flood-opacity="0.42" result="mintGlow"/>
+    <feComposite in="mintGlow" in2="blur2" operator="in" result="mintComposite"/>
+    <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="mintComposite"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+</filter>
+
+<filter id="glowWhite" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur"/>
+    <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+</filter>
+
+
+  <style>
+    text, tspan {
+        font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Mono', 'Courier New', monospace;
+        white-space: pre;
+        dominant-baseline: auto;
+    }
+    .prompt-user { fill: #36E3A3; font-size: 14px; font-weight: 700; letter-spacing: 0.05px; }
+    .prompt-sep  { fill: #64748B; font-size: 14px; font-weight: 500; }
+    .prompt-path { fill: #38BDF8; font-size: 14px; font-weight: 700; }
+    .command     { fill: #F8FAFC; font-size: 14px; font-weight: 700; letter-spacing: 0.03px; }
+    .name        { fill: #38BDF8; font-size: 16px; font-weight: 800; letter-spacing: 0.6px; }
+    .key         { fill: #34D399; font-size: 13.5px; font-weight: 700; letter-spacing: 0.05px; }
+    .branch      { fill: #64748B; font-size: 14px; font-weight: 700; }
+    .tag         { fill: #38BDF8; font-size: 14px; font-weight: 700; }
+    .arrow       { fill: #34D399; font-size: 18px; font-weight: 800; }
+    .muted-bold  { fill: #64748B; font-size: 13px; font-weight: 700; }
+    .venue       { fill: #38BDF8; font-size: 13px; font-weight: 700; }
+    .value       { fill: #D7DEE8; font-size: 13px; font-weight: 450; letter-spacing: 0; }
+    .cursor      { fill: #34E6A5; }
+    .term-title  { font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', Consolas, monospace; font-size: 12.5px; fill: #64748B; letter-spacing: 0.5px; font-weight: bold; }
+  </style>
+
+
+<clipPath id="glitchA"><rect x="0" y="60" width="1000" height="24"/></clipPath>
+<clipPath id="glitchB"><rect x="0" y="126" width="1000" height="35"/></clipPath>
+<clipPath id="glitchC"><rect x="0" y="196" width="1000" height="40"/></clipPath>
+<clipPath id="glitchD"><rect x="0" y="263" width="1000" height="35"/></clipPath>
+<clipPath id="glitchE"><rect x="0" y="334" width="1000" height="45"/></clipPath>
+<clipPath id="glitchF"><rect x="0" y="414" width="1000" height="50"/></clipPath>
+<clipPath id="glitchG"><rect x="0" y="474" width="1000" height="40"/></clipPath>
+<clipPath id="glitchH"><rect x="0" y="548" width="1000" height="45"/></clipPath>
+
+<clipPath id="frag1"><rect x="50" y="90" width="320" height="12"/></clipPath>
+<clipPath id="frag2"><rect x="450" y="240" width="400" height="14"/></clipPath>
+<clipPath id="frag3"><rect x="120" y="370" width="500" height="16"/></clipPath>
+<clipPath id="frag4"><rect x="40" y="505" width="420" height="14"/></clipPath>
+
+
+<clipPath id="cmd_clip_1">    <rect x="30" y="58" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="0.35s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_10">    <rect x="30" y="82" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="0.72s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="cmd_clip_2">    <rect x="30" y="118" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="1.15s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_20">    <rect x="30" y="142" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="1.48s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_21">    <rect x="30" y="166" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="1.78s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="cmd_clip_3">    <rect x="30" y="202" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="2.38s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_40">    <rect x="30" y="226" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="2.68s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_41">    <rect x="30" y="250" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="2.98s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_42">    <rect x="30" y="274" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="3.28s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_43">    <rect x="30" y="298" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="3.58s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="cmd_clip_4">    <rect x="30" y="334" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.05s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_60">    <rect x="30" y="358" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.35s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_61">    <rect x="30" y="382" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.65s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_62">    <rect x="30" y="406" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.95s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_63">    <rect x="30" y="430" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="5.25s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="cmd_clip_5">    <rect x="30" y="466" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="5.75s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_80">    <rect x="30" y="490" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="6.05s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_81">    <rect x="30" y="514" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="6.35s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_82">    <rect x="30" y="538" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="6.65s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="final_prompt_clip">    <rect x="30" y="576" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="7.1s" fill="freeze"/>    </rect></clipPath>
+</defs>
+
+<!-- BASE CONTAINER & BACKGROUND -->
+<rect width="1000" height="660" rx="14" fill="url(#bgGlow)"/>
+
+<!-- TERMINAL BODY BACKGROUND SCANLINES -->
+<g clip-path="url(#bodyArea)">
+  <rect x="0" y="40" width="1000" height="620" fill="url(#scanlines)"/>
+</g>
+
+<!-- STABLE ANCHORED DARK TITLEBAR HEADER -->
+<g id="titlebar">
+  <path d="M 1,14 Q 1,1 14,1 L 986,1 Q 999,1 999,14 L 999,40 L 1,40 Z" fill="#E2E8F0"/>
+  <line x1="0" y1="40" x2="1000" y2="40" stroke="#CBD5E1" stroke-width="1.2"/>
+  <circle cx="22" cy="20" r="5" fill="#EF4444">
+    <animate attributeName="opacity" values="1;0.7;1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="38" cy="20" r="5" fill="#F59E0B">
+    <animate attributeName="opacity" values="1;0.7;1" dur="4s" begin="0.3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="54" cy="20" r="5" fill="#10B981">
+    <animate attributeName="opacity" values="1;0.7;1" dur="4s" begin="0.6s" repeatCount="indefinite"/>
+  </circle>
+  <text x="500.0" y="24" text-anchor="middle" class="term-title">praneeth@devbox:~</text>
+</g>
+
+<!-- STABLE OUTER BORDER STROKE -->
+<rect x="1" y="1" width="998" height="658" rx="13" fill="none" stroke="#CBD5E1" stroke-width="1.2">
+  <animate attributeName="stroke-opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+</rect>
+
+<!-- MAIN TERMINAL CONTENT WITH RETRO PHOSPHOR GLOW -->
+<g id="terminalContent">
+<g clip-path="url(#cmd_clip_1)">    <g filter="url(#glowWhite)">        <text x="36" y="78" class="prompt-user">praneeth@devbox</text>        <text x="173" y="78" class="prompt-sep">:</text>        <text x="184" y="78" class="prompt-path">~$</text>        <text x="214" y="78" class="command">whoami</text>    </g></g>
+<g clip-path="url(#row_clip_10)">    <g filter="url(#glowCyan)">        <text x="48" y="102" class="name">PRANEETH REDDY</text><line x1="238" y1="97" x2="448" y2="97" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="102" class="value">Software Developer | Cyber Security | DevOps Engineer</text>    </g></g>
+<g clip-path="url(#cmd_clip_2)">    <g filter="url(#glowWhite)">        <text x="36" y="138" class="prompt-user">praneeth@devbox</text>        <text x="173" y="138" class="prompt-sep">:</text>        <text x="184" y="138" class="prompt-path">~$</text>        <text x="214" y="138" class="command">cat ~/.education</text>    </g></g>
+<g clip-path="url(#row_clip_20)">    <g filter="url(#glowCyan)">        <text x="48" y="162" class="branch">┌─</text><text x="82" y="162" class="key">DEGREE</text><line x1="155" y1="157" x2="448" y2="157" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="162" class="value">B.Tech in Computer Science &amp; Engineering</text>    </g></g>
+<g clip-path="url(#row_clip_21)">    <g filter="url(#glowCyan)">        <text x="48" y="186" class="branch">└─</text><text x="82" y="186" class="key">INST.</text><line x1="155" y1="181" x2="448" y2="181" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="186" class="value">Amrita Vishwa Vidyapeetham (2021 – 2025)</text>    </g></g>
+<g clip-path="url(#cmd_clip_3)">    <g filter="url(#glowWhite)">        <text x="36" y="222" class="prompt-user">praneeth@devbox</text>        <text x="173" y="222" class="prompt-sep">:</text>        <text x="184" y="222" class="prompt-path">~$</text>        <text x="214" y="222" class="command">./skills.sh --summary</text>    </g></g>
+<g clip-path="url(#row_clip_40)">    <g filter="url(#glowCyan)">        <text x="48" y="246" class="tag">[+]</text><text x="92" y="246" class="key">Core Tech</text><line x1="205" y1="241" x2="448" y2="241" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="246" class="value">Python, Go, C++, TypeScript, Rust, Linux, GCP</text>    </g></g>
+<g clip-path="url(#row_clip_41)">    <g filter="url(#glowCyan)">        <text x="48" y="270" class="tag">[+]</text><text x="92" y="270" class="key">Security</text><line x1="205" y1="265" x2="448" y2="265" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="270" class="value">Cryptography, ZK-Proofs, QKD, PenTesting, NetSec</text>    </g></g>
+<g clip-path="url(#row_clip_42)">    <g filter="url(#glowCyan)">        <text x="48" y="294" class="tag">[+]</text><text x="92" y="294" class="key">DevOps/Cloud</text><line x1="205" y1="289" x2="448" y2="289" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="294" class="value">Docker, Kubernetes, Terraform, CI/CD, Microservices</text>    </g></g>
+<g clip-path="url(#row_clip_43)">    <g filter="url(#glowCyan)">        <text x="48" y="318" class="tag">[+]</text><text x="92" y="318" class="key">Hardware</text><line x1="205" y1="313" x2="448" y2="313" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="318" class="value">LoRa Mesh, ESP32 Microcontrollers, Raspberry Pi</text>    </g></g>
+<g clip-path="url(#cmd_clip_4)">    <g filter="url(#glowWhite)">        <text x="36" y="354" class="prompt-user">praneeth@devbox</text>        <text x="173" y="354" class="prompt-sep">:</text>        <text x="184" y="354" class="prompt-path">~$</text>        <text x="214" y="354" class="command">cat ~/.projects</text>    </g></g>
+<g clip-path="url(#row_clip_60)">    <g filter="url(#glowCyan)">        <text x="48" y="378" class="muted-bold">[01]</text><text x="95" y="378" class="venue">Ternix    </text><line x1="210" y1="373" x2="448" y2="373" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="378" class="value">Cross-Platform SSH &amp; Remote Session Manager</text>    </g></g>
+<g clip-path="url(#row_clip_61)">    <g filter="url(#glowCyan)">        <text x="48" y="402" class="muted-bold">[02]</text><text x="95" y="402" class="venue">Bloom     </text><line x1="210" y1="397" x2="448" y2="397" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="402" class="value">Floating Desktop Widget &amp; Voice Dictation</text>    </g></g>
+<g clip-path="url(#row_clip_62)">    <g filter="url(#glowCyan)">        <text x="48" y="426" class="muted-bold">[03]</text><text x="95" y="426" class="venue">DevFlow   </text><line x1="210" y1="421" x2="448" y2="421" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="426" class="value">Interactive Visual Developer Workflow Platform</text>    </g></g>
+<g clip-path="url(#row_clip_63)">    <g filter="url(#glowCyan)">        <text x="48" y="450" class="muted-bold">[04]</text><text x="95" y="450" class="venue">CloudShare</text><line x1="210" y1="445" x2="448" y2="445" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="450" class="value">Passwordless Zero-Knowledge File Storage</text>    </g></g>
+<g clip-path="url(#cmd_clip_5)">    <g filter="url(#glowWhite)">        <text x="36" y="486" class="prompt-user">praneeth@devbox</text>        <text x="173" y="486" class="prompt-sep">:</text>        <text x="184" y="486" class="prompt-path">~$</text>        <text x="214" y="486" class="command">./contact.sh</text>    </g></g>
+<g clip-path="url(#row_clip_80)">    <g filter="url(#glowCyan)">        <text x="48" y="510" class="key">Email</text><text x="125" y="510" class="arrow">›</text><line x1="150" y1="505" x2="448" y2="505" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="510" class="value">connectwithpraneeth@gmail.com</text>    </g></g>
+<g clip-path="url(#row_clip_81)">    <g filter="url(#glowCyan)">        <text x="48" y="534" class="key">LinkedIn</text><text x="125" y="534" class="arrow">›</text><line x1="150" y1="529" x2="448" y2="529" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="534" class="value">linkedin.com/in/connectwithpraneeth</text>    </g></g>
+<g clip-path="url(#row_clip_82)">    <g filter="url(#glowCyan)">        <text x="48" y="558" class="key">GitHub</text><text x="125" y="558" class="arrow">›</text><line x1="150" y1="553" x2="448" y2="553" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="558" class="value">github.com/PraneethReddy-github</text>    </g></g>
+<g clip-path="url(#final_prompt_clip)">    <g filter="url(#glowMint)">        <text x="36" y="596" class="prompt-user">praneeth@devbox</text>        <text x="173" y="596" class="prompt-sep">:</text>        <text x="184" y="596" class="prompt-path">~$</text>    </g></g>
+</g>
+
+<!-- FINAL CURSOR -->
+
+<g filter="url(#glowMint)">
+    <rect x="214" y="581" width="9" height="17" rx="1" class="cursor" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.01;0.05;0.45;0.5;1" dur="1.15s" begin="7.50s" repeatCount="indefinite"/>
+    </rect>
+</g>
+
+
+<!-- RETRO CYBER GLITCH OVERLAY (STRICTLY ISOLATED TO y >= 40 BODY AREA) -->
+
+<!-- HIGH INTENSITY MULTI-LINE SYNCHRONIZED CYBER GLITCH SYSTEM (STRICTLY CLIPPED TO BODY AREA y >= 40) -->
+<g id="terminalGlitch" clip-path="url(#bodyArea)" pointer-events="none">
+
+    <!-- WAVE 1: MULTI-LINE BURST ON SLICES A, C, E, G (Fires together at t = 1.8s) -->
+    <g clip-path="url(#glitchA)" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0.4;1;0;0" keyTimes="0;0.36;0.375;0.395;0.41;0.44;1" dur="4.8s" repeatCount="indefinite"/>
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;-55 0;75 0;-25 1;0 0" keyTimes="0;0.375;0.395;0.41;0.44" dur="4.8s" repeatCount="indefinite"/>
+            <use href="#terminalContent" transform="translate(-8 0)" opacity="0.95" style="color:#00E5FF"/>
+            <use href="#terminalContent" transform="translate(10 0)" opacity="0.8" style="color:#FF00A8"/>
+        </g>
+    </g>
+
+    <g clip-path="url(#glitchC)" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0.3;1;0;0" keyTimes="0;0.36;0.375;0.395;0.41;0.44;1" dur="4.8s" repeatCount="indefinite"/>
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;68 0;-45 0;30 -1;0 0" keyTimes="0;0.375;0.395;0.41;0.44" dur="4.8s" repeatCount="indefinite"/>
+            <use href="#terminalContent" transform="translate(9 0)" opacity="0.9" style="color:#FF0055"/>
+            <use href="#terminalContent" transform="translate(-11 0)" opacity="0.85" style="color:#00E5FF"/>
+        </g>
+    </g>
+
+    <g clip-path="url(#glitchE)" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.95;0.2;1;0;0" keyTimes="0;0.36;0.375;0.395;0.41;0.44;1" dur="4.8s" repeatCount="indefinite"/>
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;-80 0;60 0;-30 0;0 0" keyTimes="0;0.375;0.395;0.41;0.44" dur="4.8s" repeatCount="indefinite"/>
+            <use href="#terminalContent" transform="translate(-12 0)" opacity="0.9"/>
+        </g>
+    </g>
+
+    <g clip-path="url(#glitchG)" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0.3;0.9;0;0" keyTimes="0;0.36;0.375;0.395;0.41;0.44;1" dur="4.8s" repeatCount="indefinite"/>
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;72 0;-50 0;22 0;0 0" keyTimes="0;0.375;0.395;0.41;0.44" dur="4.8s" repeatCount="indefinite"/>
+            <use href="#terminalContent" transform="translate(14 0)" opacity="0.85" style="color:#FF00A8"/>
+        </g>
+    </g>
+
+    <!-- WAVE 2: MULTI-LINE BURST ON SLICES B, D, F, H (Fires together at t = 3.2s) -->
+    <g clip-path="url(#glitchB)" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0.25;1;0;0" keyTimes="0;0.62;0.635;0.655;0.67;0.70;1" dur="5.2s" repeatCount="indefinite"/>
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;65 0;-70 1;35 -1;0 0" keyTimes="0;0.635;0.655;0.67;0.70" dur="5.2s" repeatCount="indefinite"/>
+            <use href="#terminalContent" transform="translate(10 0)" opacity="0.9" style="color:#FF00A8"/>
+            <use href="#terminalContent" transform="translate(-8 0)" opacity="0.8" style="color:#00E5FF"/>
+        </g>
+    </g>
+
+    <g clip-path="url(#glitchD)" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.95;0.2;1;0;0" keyTimes="0;0.62;0.635;0.655;0.67;0.70;1" dur="5.2s" repeatCount="indefinite"/>
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;-75 0;55 0;-30 0;0 0" keyTimes="0;0.635;0.655;0.67;0.70" dur="5.2s" repeatCount="indefinite"/>
+            <use href="#terminalContent" transform="translate(-11 0)" opacity="0.9" style="color:#00E5FF"/>
+        </g>
+    </g>
+
+    <g clip-path="url(#glitchF)" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0.35;0.9;0;0" keyTimes="0;0.62;0.635;0.655;0.67;0.70;1" dur="5.2s" repeatCount="indefinite"/>
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;82 0;-60 0;28 0;0 0" keyTimes="0;0.565;0.59;0.61;0.65" dur="7.1s" repeatCount="indefinite"/>
+            <use href="#terminalContent" transform="translate(12 0)" opacity="0.85" style="color:#FF0055"/>
+        </g>
+    </g>
+
+    <g clip-path="url(#glitchH)" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0.15;0.95;0;0" keyTimes="0;0.62;0.635;0.655;0.67;0.70;1" dur="5.2s" repeatCount="indefinite"/>
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;-68 0;48 0;-20 0;0 0" keyTimes="0;0.325;0.35;0.365;0.40" dur="5.9s" repeatCount="indefinite"/>
+            <use href="#terminalContent" transform="translate(-9 0)" opacity="0.9"/>
+        </g>
+    </g>
+
+    <!-- INTENSE DIGITAL FRAGMENT TEARING BARS -->
+    <g opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.36;0.38;0.43" dur="4.8s" repeatCount="indefinite"/>
+        <rect x="50" y="90" width="320" height="12" fill="#00E5FF" opacity="0.85">
+            <animateTransform attributeName="transform" type="translate" values="0 0;75 0;-35 0;0 0" dur="4.8s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+
+    <g opacity="0">
+        <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.62;0.64;0.69" dur="5.2s" repeatCount="indefinite"/>
+        <rect x="450" y="240" width="400" height="14" fill="#FF0055" opacity="0.9">
+            <animateTransform attributeName="transform" type="translate" values="0 0;-80 0;45 0;0 0" dur="5.2s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+
+    <!-- HIGH-ENERGY DIGITAL FULL FLASH BARS (CLIPPED TO BODY y >= 40) -->
+    <rect x="0" y="42" width="1000" height="3" fill="#FFFFFF" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.85;0;0" keyTimes="0;0.37;0.375;0.395;1" dur="4.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="42" width="1000" height="3" fill="#00E5FF" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.85;0;0" keyTimes="0;0.63;0.635;0.655;1" dur="5.2s" repeatCount="indefinite"/>
+    </rect>
+
+</g>
+
+
+</svg>

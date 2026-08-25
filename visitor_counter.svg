@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="110" viewBox="0 0 1000 110">
+<defs>
+  <radialGradient id="visBgGlow" cx="50%" cy="15%" r="85%">
+    <stop offset="0%" stop-color="#0C0F17"/>
+    <stop offset="100%" stop-color="#020305"/>
+  </radialGradient>
+
+  <pattern id="visScanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+    <rect width="4" height="1" fill="#FFFFFF" opacity="0.025"/>
+  </pattern>
+
+  
+<!-- RETRO PHOSPHOR GLOW -->
+<filter id="glowCyan" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="blur1"/>
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur2"/>
+    <feFlood flood-color="#20DFFF" flood-opacity="0.38" result="cyanGlow"/>
+    <feComposite in="cyanGlow" in2="blur2" operator="in" result="cyanComposite"/>
+    <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="cyanComposite"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+</filter>
+
+<filter id="glowMint" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1.3" result="blur1"/>
+    <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur2"/>
+    <feFlood flood-color="#36E3A3" flood-opacity="0.42" result="mintGlow"/>
+    <feComposite in="mintGlow" in2="blur2" operator="in" result="mintComposite"/>
+    <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="mintComposite"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+</filter>
+
+<filter id="glowWhite" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur"/>
+    <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+</filter>
+
+
+  <clipPath id="vGlitchA"><rect x="0" y="0" width="1000" height="55"/></clipPath>
+  <clipPath id="vGlitchB"><rect x="0" y="55" width="1000" height="55"/></clipPath>
+</defs>
+
+<!-- BASE CONTAINER & BACKGROUND (CONSISTENT WITH TERMINAL, NO TITLEBAR TAB) -->
+<rect width="1000" height="110" rx="14" fill="url(#visBgGlow)"/>
+<rect width="1000" height="110" rx="14" fill="url(#visScanlines)"/>
+<rect x="1" y="1" width="998" height="108" rx="13" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+
+<g id="visitorBody" filter="url(#glowCyan)">
+  <text x="500.0" y="38" text-anchor="middle" fill="#38BDF8" font-family="'Fira Code', 'JetBrains Mono', monospace" font-size="14.5" font-weight="bold" letter-spacing="1.8">👁️ PROFILE VISITORS</text>
+  <image href="https://profile-counter.glitch.me/PraneethReddy-github/count.svg" x="410" y="48" width="180" height="45"/>
+</g>
+
+<!-- RETRO GLITCH OVERLAY ACROSS FULL WIDTH -->
+<g pointer-events="none">
+  <g clip-path="url(#vGlitchA)" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0.35;1;0;0" keyTimes="0;0.4;0.42;0.44;0.46;0.48;1" dur="3.5s" repeatCount="indefinite"/>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-25 0;35 0;-8 0;0 0" keyTimes="0;0.42;0.44;0.46;0.48" dur="3.5s" repeatCount="indefinite"/>
+      <use href="#visitorBody" opacity="0.85" style="color:#00E5FF" transform="translate(-6 0)"/>
+    </g>
+  </g>
+  <g clip-path="url(#vGlitchB)" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0.25;1;0;0" keyTimes="0;0.7;0.72;0.74;0.76;0.78;1" dur="4.2s" repeatCount="indefinite"/>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;30 0;-20 0;10 0;0 0" keyTimes="0;0.72;0.74;0.76;0.78" dur="4.2s" repeatCount="indefinite"/>
+      <use href="#visitorBody" opacity="0.85" style="color:#FF0055" transform="translate(7 0)"/>
+    </g>
+  </g>
+</g>
+</svg>
