@@ -1,4 +1,6 @@
 import os
+import re
+import time
 from html import escape
 import urllib.request
 
@@ -456,13 +458,86 @@ def generate_svg(is_dark=True):
 # ============================================================
 # RETRO TERMINAL THEMED GITHUB STATS FRAME SVG
 # ============================================================
-def fetch_svg(url):
-    try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        return urllib.request.urlopen(req, timeout=30).read().decode('utf-8')
-    except Exception as e:
-        print(f"Error fetching SVG from {url}: {e}")
-        return ""
+CACHE_DIR = 'cards'
+
+# Upstream generators answer with a valid-but-useless "sad face" card when their
+# own GitHub API call fails. Those must be treated as failures, not as content,
+# or a bad upstream minute gets committed onto the profile until the next run.
+UPSTREAM_ERROR_MARKERS = (
+    'Failed to retrieve',
+    'This is likely a GitHub API issue',
+    'Something went wrong',
+    'Maximum retries exceeded',
+    'Error lable',
+    'Error label',
+    'Could not fetch',
+    'No contributions found',
+)
+
+
+def _looks_like_a_real_card(svg):
+    if not svg or len(svg) < 400:
+        return False
+    if '<svg' not in svg:
+        return False
+    return not any(marker in svg for marker in UPSTREAM_ERROR_MARKERS)
+
+
+def fetch_svg(url, attempts=3):
+    """Fetch an SVG, retrying transient failures. Returns '' if all tries fail."""
+    delay = 2
+    for attempt in range(1, attempts + 1):
+        try:
+            req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+            body = urllib.request.urlopen(req, timeout=30).read().decode('utf-8')
+        except Exception as e:
+            print(f"  attempt {attempt}/{attempts} failed for {url}: {e}")
+        else:
+            if _looks_like_a_real_card(body):
+                return body
+            print(f"  attempt {attempt}/{attempts}: {url} returned an error/empty card")
+        if attempt < attempts:
+            time.sleep(delay)
+            delay *= 2
+    return ""
+
+
+def _placeholder_card(label):
+    """Themed stand-in used only when a card has never been fetched successfully."""
+    return (
+        "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 495 195' "
+        "width='495px' height='195px'>"
+        "<text x='247.5' y='100' text-anchor='middle' fill='#64748B' "
+        "font-family=\"'Fira Code','JetBrains Mono',monospace\" font-size='13'>"
+        f"{esc(label)} :: awaiting next sync</text></svg>"
+    )
+
+
+def fetch_card(name, url, label):
+    """Fetch a stats card, falling back to the last good copy on disk.
+
+    The cached copy is committed alongside the SVGs, so an upstream outage
+    leaves the previous card in place instead of replacing it with an error.
+    """
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    cache_path = os.path.join(CACHE_DIR, f'{name}.svg')
+
+    svg = fetch_svg(url)
+    if svg:
+        with open(cache_path, 'w', encoding='utf-8') as f:
+            f.write(svg)
+        print(f"  [ok] {name}: fetched live")
+        return svg
+
+    if os.path.exists(cache_path):
+        with open(cache_path, encoding='utf-8') as f:
+            cached = f.read()
+        if _looks_like_a_real_card(cached):
+            print(f"  [stale] {name}: upstream unavailable, reusing last good card")
+            return cached
+
+    print(f"  [missing] {name}: no live data and no cache, using placeholder")
+    return _placeholder_card(label)
 
 def generate_github_stats_svg():
     width = 1000
@@ -471,12 +546,13 @@ def generate_github_stats_svg():
     print("Fetching live stats for embedded SVG generation...")
     stats_url = "https://github-stats-extended.vercel.app/api?username=PraneethReddy-github&show_icons=true&theme=tokyonight&hide_border=true&title_color=38BDF8&icon_color=34D399&text_color=E2E8F0&bg_color=00000000"
     langs_url = "https://github-stats-extended.vercel.app/api/top-langs/?username=PraneethReddy-github&layout=compact&theme=tokyonight&hide_border=true&title_color=38BDF8&text_color=E2E8F0&bg_color=00000000"
-    streak_url = "https://github-readme-streak-stats.herokuapp.com/?user=PraneethReddy-github&theme=tokyonight&hide_border=true&background=00000000&ring=38BDF8&fire=38BDF8&currStreakLabel=38BDF8"
-    
-    stats_svg = fetch_svg(stats_url)
-    langs_svg = fetch_svg(langs_url)
-    streak_svg = fetch_svg(streak_url)
-    print("Successfully fetched stats!")
+    # NOTE: the old *.herokuapp.com host for streak-stats is dead (Heroku retired
+    # free dynos); demolab.com is the maintained instance.
+    streak_url = "https://streak-stats.demolab.com/?user=PraneethReddy-github&theme=tokyonight&hide_border=true&background=00000000&ring=38BDF8&fire=38BDF8&currStreakLabel=38BDF8"
+
+    stats_svg = fetch_card('stats', stats_url, 'STATS')
+    langs_svg = fetch_card('langs', langs_url, 'LANGUAGES')
+    streak_svg = fetch_card('streak', streak_url, 'STREAK')
     
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
 <defs>
@@ -531,18 +607,68 @@ def generate_github_stats_svg():
 # ============================================================
 # FULL-WIDTH VISITOR COUNTER SVG (CONSISTENT BACKGROUND, NO TOP TAB)
 # ============================================================
+VISITOR_CACHE = os.path.join(CACHE_DIR, 'visitor_count.txt')
+
+# komarev only *increments* for requests coming through GitHub's camo image
+# proxy, i.e. an actual profile view. A plain request like this one reads the
+# true total without inflating it -- so this build never counts itself.
+VISITOR_URL = ("https://komarev.com/ghpvc/?username=PraneethReddy-github"
+               "&style=for-the-badge&color=38BDF8&label=PROFILE+VISITORS"
+               "&label_color=00000000")
+
+
+def _last_known_count():
+    try:
+        with open(VISITOR_CACHE, encoding='utf-8') as f:
+            return int(f.read().strip())
+    except Exception:
+        return None
+
+
+def read_visitor_count():
+    """Read the live visitor total, never regressing to 0 on a failed fetch."""
+    print("Reading live visitor count (read-only, does not inflate the counter)...")
+    previous = _last_known_count()
+    badge = fetch_svg(VISITOR_URL, attempts=3)
+
+    count = None
+    if badge:
+        # "<title>PROFILE VISITORS: 1234</title>" is the authoritative value;
+        # the <text> nodes are a fallback for other badge styles.
+        m = re.search(r'<title>[^<]*?:\s*([\d,]+)\s*</title>', badge)
+        if not m:
+            texts = re.findall(r'<text[^>]*>([^<]+)</text>', badge)
+            for candidate in reversed(texts):
+                if re.fullmatch(r'[\d,]+', candidate.strip()):
+                    m = re.match(r'([\d,]+)', candidate.strip())
+                    break
+        if m:
+            count = int(m.group(1).replace(',', ''))
+
+    if count is None:
+        if previous is not None:
+            print(f"  [stale] could not read the badge, keeping last known count: {previous}")
+            return previous
+        print("  [missing] could not read the badge and no cache exists, showing 0")
+        return 0
+
+    # The counter is monotonic; a lower value means a bad read, not lost views.
+    if previous is not None and count < previous:
+        print(f"  [guard] read {count} but cache holds {previous}; keeping {previous}")
+        return previous
+
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    with open(VISITOR_CACHE, 'w', encoding='utf-8') as f:
+        f.write(str(count))
+    print(f"  [ok] visitor count: {count}")
+    return count
+
+
 def generate_visitor_counter_svg():
     width = 1000
     height = 110
     
-    print("Fetching live visitor count for embedded SVG generation...")
-    vis_url = "https://komarev.com/ghpvc/?username=PraneethReddy-github&style=for-the-badge&color=38BDF8&label=PROFILE+VISITORS&label_color=00000000"
-    vis_svg = fetch_svg(vis_url)
-    
-    import re
-    matches = re.findall(r'<text[^>]*>([^<]+)</text>', vis_svg)
-    count = matches[-1] if matches else "0"
-    print(f"Successfully fetched visitor count: {count}")
+    count = read_visitor_count()
     
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
 <defs>

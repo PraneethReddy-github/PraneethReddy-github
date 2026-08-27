@@ -2,7 +2,7 @@ name: Update Profile SVGs
 
 on:
   schedule:
-    - cron: "0 */12 * * *" # Runs every 12 hours
+    - cron: "7 */2 * * *" # Every 2 hours, so the visitor total stays fresh
   workflow_dispatch: # Allows manual trigger
   push:
     branches:
@@ -34,7 +34,7 @@ jobs:
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add *.svg
+          git add *.svg cards/
           # Only commit if there are changes
           if git diff --quiet && git diff --staged --quiet; then
             echo "No changes to commit."
