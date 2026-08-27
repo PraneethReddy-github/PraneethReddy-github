@@ -1,5 +1,26 @@
 [
   {
+    "name": "Puff-Puff-Pass",
+    "description": "Peer-to-peer file sharing that handles very large files. Browser to browser over WebRTC, streamed straight to disk so memory stays flat.",
+    "language": "TypeScript",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "bloom",
+    "description": "Bloom \u2014 A floating, draggable glass bud desktop utility with a dynamic dial for interactive folder navigation",
+    "language": "JavaScript",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "ternix",
+    "description": "Ternix \u2014 One terminal. Everything. A modern cross-platform SSH & remote session manager.",
+    "language": "TypeScript",
+    "stars": 5,
+    "forks": 0
+  },
+  {
     "name": "My-First-Portfolio",
     "description": "Nostalgic portfolio project showcasing foundational B.Tech 1st year web development work",
     "language": "HTML",
@@ -17,27 +38,6 @@
     "name": "Morphix",
     "description": "Offline, cross-platform desktop application for multi-format file conversion and manipulation (documents, images, video, audio, PDFs)",
     "language": "TypeScript",
-    "stars": 0,
-    "forks": 0
-  },
-  {
-    "name": "Zero-Knowledge-Secure-Storage-System",
-    "description": "Zero-Knowledge Secure Cloud File Storage & Sharing System using RSA Challenge-Response Auth, AES-256 E2EE, and Serverless Microservices",
-    "language": "Python",
-    "stars": 0,
-    "forks": 0
-  },
-  {
-    "name": "CloudShare-Passwordless-Secure-Storage",
-    "description": "CloudShare: A Passwordless Cloud-Based File Storage and Sharing Framework using RSA/AES Cryptography and GCP Serverless Microservices",
-    "language": "Python",
-    "stars": 0,
-    "forks": 0
-  },
-  {
-    "name": "Cloud-Realtime-Anomaly-Detection",
-    "description": "Cloud-native framework for real-time network anomaly detection built upon the UNSW-NB15 dataset and deployed on GCP",
-    "language": "Python",
     "stars": 0,
     "forks": 0
   }

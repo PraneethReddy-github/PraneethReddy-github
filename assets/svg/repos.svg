@@ -58,45 +58,45 @@
 <g filter="url(#glowCyan)">
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.15s">
     <text x="40" y="62" class="repo-arrow">▸</text>
-    <text x="64" y="62" class="repo-name">My-First-Portfolio</text>
-    <circle cx="750" cy="57" r="4.5" fill="#E34C26"/>
-    <text x="764" y="62" class="repo-meta">HTML</text>
-    <text x="64" y="82" class="repo-desc">Nostalgic portfolio project showcasing foundational B.Tech 1st year web devel…</text>
+    <text x="64" y="62" class="repo-name">Puff-Puff-Pass</text>
+    <circle cx="750" cy="57" r="4.5" fill="#3178C6"/>
+    <text x="764" y="62" class="repo-meta">TypeScript</text>
+    <text x="64" y="82" class="repo-desc">Peer-to-peer file sharing that handles very large files. Browser to browser o…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.27s">
     <text x="40" y="116" class="repo-arrow">▸</text>
-    <text x="64" y="116" class="repo-name">DevFlow</text>
+    <text x="64" y="116" class="repo-name">bloom</text>
     <circle cx="750" cy="111" r="4.5" fill="#F1E05A"/>
     <text x="764" y="116" class="repo-meta">JavaScript</text>
-    <text x="64" y="136" class="repo-desc">Autonomous, AI-orchestrated engineering platform automating the software deve…</text>
+    <text x="64" y="136" class="repo-desc">Bloom — A floating, draggable glass bud desktop utility with a dynamic dial f…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.39s">
     <text x="40" y="170" class="repo-arrow">▸</text>
-    <text x="64" y="170" class="repo-name">Morphix</text>
+    <text x="64" y="170" class="repo-name">ternix</text>
     <circle cx="750" cy="165" r="4.5" fill="#3178C6"/>
-    <text x="764" y="170" class="repo-meta">TypeScript</text>
-    <text x="64" y="190" class="repo-desc">Offline, cross-platform desktop application for multi-format file conversion…</text>
+    <text x="764" y="170" class="repo-meta">TypeScript  │  ★ 5</text>
+    <text x="64" y="190" class="repo-desc">Ternix — One terminal. Everything. A modern cross-platform SSH &amp; remote sessi…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.51s">
     <text x="40" y="224" class="repo-arrow">▸</text>
-    <text x="64" y="224" class="repo-name">Zero-Knowledge-Secure-Storage-System</text>
-    <circle cx="750" cy="219" r="4.5" fill="#3572A5"/>
-    <text x="764" y="224" class="repo-meta">Python</text>
-    <text x="64" y="244" class="repo-desc">Zero-Knowledge Secure Cloud File Storage &amp; Sharing System using RSA Challenge…</text>
+    <text x="64" y="224" class="repo-name">My-First-Portfolio</text>
+    <circle cx="750" cy="219" r="4.5" fill="#E34C26"/>
+    <text x="764" y="224" class="repo-meta">HTML</text>
+    <text x="64" y="244" class="repo-desc">Nostalgic portfolio project showcasing foundational B.Tech 1st year web devel…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.63s">
     <text x="40" y="278" class="repo-arrow">▸</text>
-    <text x="64" y="278" class="repo-name">CloudShare-Passwordless-Secure-Storage</text>
-    <circle cx="750" cy="273" r="4.5" fill="#3572A5"/>
-    <text x="764" y="278" class="repo-meta">Python</text>
-    <text x="64" y="298" class="repo-desc">CloudShare: A Passwordless Cloud-Based File Storage and Sharing Framework usi…</text>
+    <text x="64" y="278" class="repo-name">DevFlow</text>
+    <circle cx="750" cy="273" r="4.5" fill="#F1E05A"/>
+    <text x="764" y="278" class="repo-meta">JavaScript</text>
+    <text x="64" y="298" class="repo-desc">Autonomous, AI-orchestrated engineering platform automating the software deve…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.75s">
     <text x="40" y="332" class="repo-arrow">▸</text>
-    <text x="64" y="332" class="repo-name">Cloud-Realtime-Anomaly-Detection</text>
-    <circle cx="750" cy="327" r="4.5" fill="#3572A5"/>
-    <text x="764" y="332" class="repo-meta">Python</text>
-    <text x="64" y="352" class="repo-desc">Cloud-native framework for real-time network anomaly detection built upon the…</text>
+    <text x="64" y="332" class="repo-name">Morphix</text>
+    <circle cx="750" cy="327" r="4.5" fill="#3178C6"/>
+    <text x="764" y="332" class="repo-meta">TypeScript</text>
+    <text x="64" y="352" class="repo-desc">Offline, cross-platform desktop application for multi-format file conversion…</text>
   </g>
 </g>
 </svg>
