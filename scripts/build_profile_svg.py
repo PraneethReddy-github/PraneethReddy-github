@@ -4,6 +4,12 @@ import time
 from html import escape
 import urllib.request
 
+# This script lives in scripts/, but every path it touches is relative to the
+# repository root, so it behaves the same whether CI runs it from the root or
+# you run it from inside scripts/.
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SVG_DIR = os.path.join(ROOT, 'assets', 'svg')
+
 FONT = "'Fira Code', 'JetBrains Mono', 'Cascadia Mono', 'Courier New', monospace"
 
 def esc(value):
@@ -458,7 +464,7 @@ def generate_svg(is_dark=True):
 # ============================================================
 # RETRO TERMINAL THEMED GITHUB STATS FRAME SVG
 # ============================================================
-CACHE_DIR = 'cards'
+CACHE_DIR = os.path.join(ROOT, 'assets', 'cache')
 
 # Upstream generators answer with a valid-but-useless "sad face" card when their
 # own GitHub API call fails. Those must be treated as failures, not as content,
@@ -723,13 +729,14 @@ if __name__ == '__main__':
     github_stats_svg = generate_github_stats_svg()
     visitor_svg = generate_visitor_counter_svg()
     
-    with open('dark.svg', 'w', encoding='utf-8') as f:
-        f.write(dark_svg)
-    with open('light.svg', 'w', encoding='utf-8') as f:
-        f.write(light_svg)
-    with open('github_stats.svg', 'w', encoding='utf-8') as f:
-        f.write(github_stats_svg)
-    with open('visitor_counter.svg', 'w', encoding='utf-8') as f:
-        f.write(visitor_svg)
+    os.makedirs(SVG_DIR, exist_ok=True)
+    for filename, content in (
+        ('dark.svg', dark_svg),
+        ('light.svg', light_svg),
+        ('github_stats.svg', github_stats_svg),
+        ('visitor_counter.svg', visitor_svg),
+    ):
+        with open(os.path.join(SVG_DIR, filename), 'w', encoding='utf-8') as f:
+            f.write(content)
         
-    print("Successfully built dark.svg, light.svg, github_stats.svg, and consistent visitor_counter.svg!")
+    print(f"Successfully built dark.svg, light.svg, github_stats.svg and visitor_counter.svg into {SVG_DIR}")

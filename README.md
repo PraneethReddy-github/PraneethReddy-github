@@ -3,15 +3,15 @@
   <!-- RETRO PHOSPHOR TERMINAL HEADER -->
   <a href="https://github.com/PraneethReddy-github">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="./light.svg">
-      <img alt="Praneeth Reddy Terminal Profile" src="./dark.svg" width="100%">
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/svg/dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="./assets/svg/light.svg">
+      <img alt="Praneeth Reddy Terminal Profile" src="./assets/svg/dark.svg" width="100%">
     </picture>
   </a>
 
   <!-- RETRO TERMINAL THEMED LIVE GITHUB STATS FRAME -->
   <a href="https://github.com/PraneethReddy-github">
-    <img src="./github_stats.svg" alt="Retro Terminal GitHub Stats" width="100%" style="margin-top: 15px;">
+    <img src="./assets/svg/github_stats.svg" alt="Retro Terminal GitHub Stats" width="100%" style="margin-top: 15px;">
   </a>
 
   <!-- LIVE VISITOR PING (1px, invisible).
@@ -22,11 +22,11 @@
   <img src="https://komarev.com/ghpvc/?username=PraneethReddy-github&style=flat&color=38BDF8&label=+" alt="" width="1" height="1">
 
   <!-- CYBER CAT EYES GIF -->
-  <img src="./imgs/cat-eyes.gif" alt="Cyber Cat Eyes" width="100%" style="border-radius: 14px; border: 1px solid #1E293B; margin-top: 15px;">
+  <img src="./assets/img/cat-eyes.gif" alt="Cyber Cat Eyes" width="100%" style="border-radius: 14px; border: 1px solid #1E293B; margin-top: 15px;">
 
   <!-- GLOWING VISITOR COUNTER (total refreshed every 6h by CI) -->
   <a href="https://github.com/PraneethReddy-github">
-    <img src="./visitor_counter.svg" alt="Profile Visitors" width="100%" style="margin-top: 15px;">
+    <img src="./assets/svg/visitor_counter.svg" alt="Profile Visitors" width="100%" style="margin-top: 15px;">
   </a>
 
   <!-- Prefer a number that updates instantly instead of every 6h? Swap the
