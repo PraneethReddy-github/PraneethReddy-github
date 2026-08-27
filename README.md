@@ -14,11 +14,15 @@
     <img src="./assets/svg/github_stats.svg" alt="Retro Terminal GitHub Stats" width="100%" style="margin-top: 15px;">
   </a>
 
-  <!-- LIVE VISITOR PING (1px, invisible).
-       This is what actually increments the counter: komarev only counts a hit
-       when GitHub's camo image proxy requests it, i.e. on a real profile view.
-       The glowing panel below renders that same total, refreshed by CI.
-       Removing this line freezes the counter at its current value. -->
+  <!-- REPOSITORY SHOWCASE (generated in-house by scripts/build_profile_svg.py) -->
+  <a href="https://github.com/PraneethReddy-github?tab=repositories">
+    <img src="./assets/svg/repos.svg" alt="Recent Repositories" width="100%" style="margin-top: 15px;">
+  </a>
+
+  <!-- CONTRIBUTION SNAKE (grid by Platane/snk in CI, framed by scripts/build_profile_svg.py) -->
+  <img src="./assets/svg/snake.svg" alt="Contribution Snake" width="100%" style="margin-top: 15px;">
+
+  <!-- LIVE VISITOR PING (1px, invisible).-->
   <img src="https://komarev.com/ghpvc/?username=PraneethReddy-github&style=flat&color=38BDF8&label=+" alt="" width="1" height="1">
 
   <!-- CYBER CAT EYES GIF -->

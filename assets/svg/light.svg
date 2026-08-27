@@ -78,10 +78,6 @@
 <clipPath id="glitchG"><rect x="0" y="474" width="1000" height="40"/></clipPath>
 <clipPath id="glitchH"><rect x="0" y="548" width="1000" height="45"/></clipPath>
 
-<clipPath id="frag1"><rect x="50" y="90" width="320" height="12"/></clipPath>
-<clipPath id="frag2"><rect x="450" y="240" width="400" height="14"/></clipPath>
-<clipPath id="frag3"><rect x="120" y="370" width="500" height="16"/></clipPath>
-<clipPath id="frag4"><rect x="40" y="505" width="420" height="14"/></clipPath>
 
 
 <clipPath id="cmd_clip_1">    <rect x="30" y="58" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="0.35s" fill="freeze"/>    </rect></clipPath>

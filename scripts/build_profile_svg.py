@@ -1,4 +1,5 @@
 import os
+import json
 import re
 import time
 from html import escape
@@ -9,6 +10,19 @@ import urllib.request
 # you run it from inside scripts/.
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SVG_DIR = os.path.join(ROOT, 'assets', 'svg')
+
+# ------------------------------------------------------------------
+# Identity. Defined once here and threaded through every panel and URL.
+# GITHUB_REPOSITORY_OWNER is supplied automatically by GitHub Actions, so a CI
+# build follows whichever account it runs under instead of a baked-in name; the
+# literals are only the local fallback. Each can be overridden by environment.
+# ------------------------------------------------------------------
+USERNAME = os.environ.get('GITHUB_REPOSITORY_OWNER') or 'PraneethReddy-github'
+SHELL_USER = os.environ.get('PROFILE_SHELL_USER') or 'praneeth'
+SHELL_HOST = os.environ.get('PROFILE_SHELL_HOST') or 'devbox'
+PROMPT = f'{SHELL_USER}@{SHELL_HOST}'
+CONTACT_EMAIL = os.environ.get('PROFILE_EMAIL') or 'connectwithpraneeth@gmail.com'
+CONTACT_LINKEDIN = os.environ.get('PROFILE_LINKEDIN') or 'linkedin.com/in/connectwithpraneeth'
 
 FONT = "'Fira Code', 'JetBrains Mono', 'Cascadia Mono', 'Courier New', monospace"
 
@@ -81,7 +95,7 @@ def command_line(y, command, delay, index):
     body = (
         f'<g clip-path="url(#{cid})">'
         f'    <g filter="url(#glowWhite)">'
-        f'        {text(36, y, "praneeth@devbox", "prompt-user")}'
+        f'        {text(36, y, PROMPT, "prompt-user")}'
         f'        {text(173, y, ":", "prompt-sep")}'
         f'        {text(184, y, "~$", "prompt-path")}'
         f'        {text(214, y, command, "command")}'
@@ -195,9 +209,9 @@ def build_retro_terminal_content():
     content.append(body)
 
     contacts = [
-        (510, "Email",    "connectwithpraneeth@gmail.com",       6.05),
-        (534, "LinkedIn", "linkedin.com/in/connectwithpraneeth", 6.35),
-        (558, "GitHub",   "github.com/PraneethReddy-github",     6.65),
+        (510, "Email",    CONTACT_EMAIL,                         6.05),
+        (534, "LinkedIn", CONTACT_LINKEDIN,                      6.35),
+        (558, "GitHub",   f"github.com/{USERNAME}",              6.65),
     ]
     for i, (y, key, value, delay) in enumerate(contacts):
         pieces = [
@@ -219,7 +233,7 @@ def build_retro_terminal_content():
     final_prompt = (
         f'<g clip-path="url(#{final_clip_id})">'
         f'    <g filter="url(#glowMint)">'
-        f'        {text(36, final_y, "praneeth@devbox", "prompt-user")}'
+        f'        {text(36, final_y, PROMPT, "prompt-user")}'
         f'        {text(173, final_y, ":", "prompt-sep")}'
         f'        {text(184, final_y, "~$", "prompt-path")}'
         f'    </g>'
@@ -248,10 +262,6 @@ retro_glitch_defs = """
 <clipPath id="glitchG"><rect x="0" y="474" width="1000" height="40"/></clipPath>
 <clipPath id="glitchH"><rect x="0" y="548" width="1000" height="45"/></clipPath>
 
-<clipPath id="frag1"><rect x="50" y="90" width="320" height="12"/></clipPath>
-<clipPath id="frag2"><rect x="450" y="240" width="400" height="14"/></clipPath>
-<clipPath id="frag3"><rect x="120" y="370" width="500" height="16"/></clipPath>
-<clipPath id="frag4"><rect x="40" y="505" width="420" height="14"/></clipPath>
 """
 
 def build_glitch(master_id="terminalContent"):
@@ -438,7 +448,7 @@ def generate_svg(is_dark=True):
   <circle cx="54" cy="20" r="5" fill="#10B981">
     <animate attributeName="opacity" values="1;0.7;1" dur="4s" begin="0.6s" repeatCount="indefinite"/>
   </circle>
-  <text x="{width/2}" y="24" text-anchor="middle" class="term-title">praneeth@devbox:~</text>
+  <text x="{width/2}" y="24" text-anchor="middle" class="term-title">{PROMPT}:~</text>
 </g>
 
 <!-- STABLE OUTER BORDER STROKE -->
@@ -550,11 +560,11 @@ def generate_github_stats_svg():
     height = 475
     
     print("Fetching live stats for embedded SVG generation...")
-    stats_url = "https://github-stats-extended.vercel.app/api?username=PraneethReddy-github&show_icons=true&theme=tokyonight&hide_border=true&title_color=38BDF8&icon_color=34D399&text_color=E2E8F0&bg_color=00000000"
-    langs_url = "https://github-stats-extended.vercel.app/api/top-langs/?username=PraneethReddy-github&layout=compact&theme=tokyonight&hide_border=true&title_color=38BDF8&text_color=E2E8F0&bg_color=00000000"
+    stats_url = (f"https://github-stats-extended.vercel.app/api?username={USERNAME}&show_icons=true&theme=tokyonight&hide_border=true&title_color=38BDF8&icon_color=34D399&text_color=E2E8F0&bg_color=00000000")
+    langs_url = (f"https://github-stats-extended.vercel.app/api/top-langs/?username={USERNAME}&layout=compact&theme=tokyonight&hide_border=true&title_color=38BDF8&text_color=E2E8F0&bg_color=00000000")
     # NOTE: the old *.herokuapp.com host for streak-stats is dead (Heroku retired
     # free dynos); demolab.com is the maintained instance.
-    streak_url = "https://streak-stats.demolab.com/?user=PraneethReddy-github&theme=tokyonight&hide_border=true&background=00000000&ring=38BDF8&fire=38BDF8&currStreakLabel=38BDF8"
+    streak_url = (f"https://streak-stats.demolab.com/?user={USERNAME}&theme=tokyonight&hide_border=true&background=00000000&ring=38BDF8&fire=38BDF8&currStreakLabel=38BDF8")
 
     stats_svg = fetch_card('stats', stats_url, 'STATS')
     langs_svg = fetch_card('langs', langs_url, 'LANGUAGES')
@@ -589,7 +599,7 @@ def generate_github_stats_svg():
   <circle cx="22" cy="18" r="4.5" fill="#EF4444"/>
   <circle cx="38" cy="18" r="4.5" fill="#F59E0B"/>
   <circle cx="54" cy="18" r="4.5" fill="#10B981"/>
-  <text x="{width/2}" y="22" text-anchor="middle" class="term-title">praneeth@devbox:~/stats --live</text>
+  <text x="{width/2}" y="22" text-anchor="middle" class="term-title">{PROMPT}:~/stats --live</text>
 </g>
 
 <!-- STABLE OUTER BORDER STROKE -->
@@ -618,7 +628,7 @@ VISITOR_CACHE = os.path.join(CACHE_DIR, 'visitor_count.txt')
 # komarev only *increments* for requests coming through GitHub's camo image
 # proxy, i.e. an actual profile view. A plain request like this one reads the
 # true total without inflating it -- so this build never counts itself.
-VISITOR_URL = ("https://komarev.com/ghpvc/?username=PraneethReddy-github"
+VISITOR_URL = (f"https://komarev.com/ghpvc/?username={USERNAME}"
                "&style=for-the-badge&color=38BDF8&label=PROFILE+VISITORS"
                "&label_color=00000000")
 
@@ -723,11 +733,550 @@ def generate_visitor_counter_svg():
 </svg>
 """
 
+# ============================================================
+# REPOSITORY SHOWCASE PANEL (built in-house from the GitHub API)
+# ============================================================
+REPOS_CACHE = os.path.join(CACHE_DIR, 'repos.json')
+REPOS_SHOWN = 6
+
+# Language accent colours, roughly matching GitHub's own linguist palette.
+LANG_COLORS = {
+    'Python': '#3572A5',
+    'Jupyter Notebook': '#DA5B0B',
+    'JavaScript': '#F1E05A',
+    'TypeScript': '#3178C6',
+    'HTML': '#E34C26',
+    'CSS': '#563D7C',
+    'Java': '#B07219',
+    'C': '#555555',
+    'C++': '#F34B7D',
+    'C#': '#178600',
+    'Shell': '#89E051',
+    'Go': '#00ADD8',
+    'Rust': '#DEA584',
+    'Ruby': '#701516',
+    'PHP': '#4F5D95',
+    'Dart': '#00B4AB',
+    'Kotlin': '#A97BFF',
+    'Swift': '#F05138',
+    'R': '#198CE7',
+}
+
+
+def _fetch_repos_from_api():
+    """List the user's public, non-fork repositories, most recently pushed first."""
+    url = (f'https://api.github.com/users/{USERNAME}/repos'
+           '?per_page=100&sort=pushed&direction=desc&type=owner')
+    headers = {
+        'User-Agent': 'Mozilla/5.0',
+        'Accept': 'application/vnd.github+json',
+    }
+    # In CI the workflow token lifts the 60/hour anonymous rate limit.
+    token = os.environ.get('GITHUB_TOKEN')
+    if token:
+        headers['Authorization'] = f'Bearer {token}'
+
+    delay = 2
+    for attempt in range(1, 4):
+        try:
+            req = urllib.request.Request(url, headers=headers)
+            body = urllib.request.urlopen(req, timeout=30).read().decode('utf-8')
+            data = json.loads(body)
+        except Exception as e:
+            print(f"  attempt {attempt}/3 failed for the repo list: {e}")
+        else:
+            if isinstance(data, list):
+                return data
+            print(f"  attempt {attempt}/3: unexpected repo payload: {str(data)[:120]}")
+        if attempt < 3:
+            time.sleep(delay)
+            delay *= 2
+    return None
+
+
+def load_repos():
+    """Return the repos to showcase, falling back to the cached list on failure."""
+    print("Fetching repository list...")
+    raw = _fetch_repos_from_api()
+
+    if raw is not None:
+        picked = [
+            {
+                'name': r.get('name') or '',
+                'description': r.get('description') or '',
+                'language': r.get('language') or '',
+                'stars': r.get('stargazers_count') or 0,
+                'forks': r.get('forks_count') or 0,
+            }
+            for r in raw
+            if not r.get('fork') and not r.get('archived') and r.get('name') != USERNAME
+        ][:REPOS_SHOWN]
+
+        if picked:
+            os.makedirs(CACHE_DIR, exist_ok=True)
+            with open(REPOS_CACHE, 'w', encoding='utf-8') as f:
+                json.dump(picked, f, indent=2)
+            # Total public repo count feeds the snake panel's arcade HUD.
+            owned = [r for r in raw if not r.get('fork')]
+            with open(os.path.join(CACHE_DIR, 'repo_count.txt'), 'w', encoding='utf-8') as f:
+                f.write(str(len(owned)))
+            print(f"  [ok] repos: fetched {len(picked)} live")
+            return picked
+        print("  [warn] repo list came back empty after filtering")
+
+    if os.path.exists(REPOS_CACHE):
+        try:
+            with open(REPOS_CACHE, encoding='utf-8') as f:
+                cached = json.load(f)
+            if cached:
+                print(f"  [stale] repos: API unavailable, reusing {len(cached)} cached")
+                return cached
+        except Exception as e:
+            print(f"  [warn] repo cache unreadable: {e}")
+
+    print("  [missing] repos: no live data and no cache")
+    return []
+
+
+def _truncate(value, limit):
+    value = ' '.join(str(value).split())
+    return value if len(value) <= limit else value[:limit - 1].rstrip() + '…'
+
+
+def generate_repos_svg():
+    repos = load_repos()
+
+    width = 1000
+    row_h = 54
+    top = 62
+    height = top + max(len(repos), 1) * row_h + 20
+
+    rows = []
+    for i, repo in enumerate(repos):
+        y = top + i * row_h
+        delay = 0.15 + i * 0.12
+        lang = repo.get('language') or ''
+        lang_color = LANG_COLORS.get(lang, '#64748B')
+
+        meta = []
+        if lang:
+            meta.append(lang)
+        if repo.get('stars'):
+            meta.append(f"★ {repo['stars']}")
+        if repo.get('forks'):
+            meta.append(f"⑂ {repo['forks']}")
+        meta_text = '  │  '.join(meta)
+
+        desc = _truncate(repo.get('description') or 'no description provided', 78)
+
+        rows.append(
+            f'\n  <g style="opacity:0; animation: repoIn 0.45s ease-out forwards {delay:.2f}s">'
+            f'\n    <text x="40" y="{y}" class="repo-arrow">▸</text>'
+            f'\n    <text x="64" y="{y}" class="repo-name">{esc(repo.get("name", ""))}</text>'
+            f'\n    <circle cx="{width - 250}" cy="{y - 5}" r="4.5" fill="{lang_color}"/>'
+            f'\n    <text x="{width - 236}" y="{y}" class="repo-meta">{esc(meta_text)}</text>'
+            f'\n    <text x="64" y="{y + 20}" class="repo-desc">{esc(desc)}</text>'
+            f'\n  </g>'
+        )
+
+    if not repos:
+        rows.append(
+            f'\n  <text x="{width/2}" y="{top + 20}" text-anchor="middle" class="repo-desc">'
+            'repository list unavailable :: awaiting next sync</text>'
+        )
+
+    rows_svg = ''.join(rows)
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+<defs>
+  <radialGradient id="repoBgGlow" cx="50%" cy="12%" r="88%">
+    <stop offset="0%" stop-color="#0C0F17"/>
+    <stop offset="100%" stop-color="#020305"/>
+  </radialGradient>
+
+  <pattern id="repoScanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+    <rect width="4" height="1" fill="#FFFFFF" opacity="0.025"/>
+  </pattern>
+
+  {retro_filters}
+
+  <style>
+    @keyframes repoIn {{
+      0%   {{ opacity: 0; transform: translateX(-14px); }}
+      100% {{ opacity: 1; transform: translateX(0); }}
+    }}
+    .term-title {{ font-family: {FONT}; font-size: 12.5px; fill: #64748B; letter-spacing: 0.5px; font-weight: bold; }}
+    .repo-arrow {{ font-family: {FONT}; font-size: 13px; fill: #34D399; }}
+    .repo-name  {{ font-family: {FONT}; font-size: 15px; fill: #38BDF8; font-weight: bold; letter-spacing: 0.4px; }}
+    .repo-meta  {{ font-family: {FONT}; font-size: 11.5px; fill: #94A3B8; }}
+    .repo-desc  {{ font-family: {FONT}; font-size: 11.5px; fill: #64748B; }}
+  </style>
+</defs>
+
+<rect width="{width}" height="{height}" rx="14" fill="url(#repoBgGlow)"/>
+<rect x="0" y="36" width="{width}" height="{height-36}" fill="url(#repoScanlines)"/>
+
+<g id="repoTitlebar">
+  <path d="M 1,14 Q 1,1 14,1 L {width-14},1 Q {width-1},1 {width-1},14 L {width-1},36 L 1,36 Z" fill="#080B10"/>
+  <line x1="0" y1="36" x2="{width}" y2="36" stroke="#1E293B" stroke-width="1.2"/>
+  <circle cx="22" cy="18" r="4.5" fill="#EF4444"/>
+  <circle cx="38" cy="18" r="4.5" fill="#F59E0B"/>
+  <circle cx="54" cy="18" r="4.5" fill="#10B981"/>
+  <text x="{width/2}" y="22" text-anchor="middle" class="term-title">{PROMPT}:~/repos --recent</text>
+</g>
+
+<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="13" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+
+<g filter="url(#glowCyan)">{rows_svg}
+</g>
+</svg>
+"""
+
+
+# ============================================================
+# RETRO-FRAMED CONTRIBUTION SNAKE
+# ============================================================
+# Platane/snk emits a bare contribution grid. Two things happen here:
+#   1. the progress bar it draws underneath the grid is stripped out, and
+#   2. the grid is wrapped in the same terminal chrome as the other panels,
+#      with the RGB-split glitch used on the visitor counter.
+# The raw snake is cached under assets/cache/ so an snk outage leaves the
+# previous frame in place instead of blanking the panel.
+# One grid only. The frame below is always dark, exactly like the stats, repo
+# and visitor panels, so a pale "light" grid would sit wrongly inside it.
+
+
+def _strip_css_rule(css, marker):
+    """Delete a CSS rule (brace-matched, so nested @keyframes survive intact)."""
+    while True:
+        start = css.find(marker)
+        if start == -1:
+            return css
+        open_brace = css.find('{', start)
+        if open_brace == -1:
+            return css
+        depth = 0
+        end = None
+        for i in range(open_brace, len(css)):
+            if css[i] == '{':
+                depth += 1
+            elif css[i] == '}':
+                depth -= 1
+                if depth == 0:
+                    end = i
+                    break
+        if end is None:
+            return css
+        css = css[:start] + css[end + 1:]
+
+
+def strip_snake_progress_bar(svg):
+    """Remove the progress bar snk draws below the grid (class 'u' rects)."""
+    without_rects = re.sub(r'<rect class="u u\d+"[^>]*/>', '', svg)
+    removed = len(re.findall(r'<rect class="u u\d+"[^>]*/>', svg))
+
+    match = re.search(r'<style>(.*?)</style>', without_rects, re.S)
+    if match:
+        css = match.group(1)
+        for marker in ['.u{'] + [f'.u.u{i}' for i in range(10)] + [f'@keyframes u{i}' for i in range(10)]:
+            css = _strip_css_rule(css, marker)
+        without_rects = without_rects[:match.start(1)] + css + without_rects[match.end(1):]
+
+    return without_rects, removed
+
+
+def _streak_number(label):
+    """Pull one figure out of the cached streak card, or None if unavailable."""
+    path = os.path.join(CACHE_DIR, 'streak.svg')
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, encoding='utf-8') as f:
+            card = f.read()
+    except Exception:
+        return None
+    match = re.search(re.escape(f'<!-- {label} -->') + r'.*?<text[^>]*>\s*([\d,]+)\s*</text>',
+                      card, re.S)
+    return match.group(1).replace(',', '') if match else None
+
+
+def read_arcade_stats(raw_grid):
+    """Assemble the HUD figures. Everything here is already on disk, so the
+    panel needs no extra API call and inherits the existing cache fallbacks."""
+    dots = len(re.findall(r'<rect class="c c[0-9a-z]+"', raw_grid))
+
+    repo_count = None
+    count_path = os.path.join(CACHE_DIR, 'repo_count.txt')
+    if os.path.exists(count_path):
+        try:
+            with open(count_path, encoding='utf-8') as f:
+                repo_count = str(int(f.read().strip()))
+        except Exception:
+            repo_count = None
+
+    return {
+        'high_score': _streak_number('Total Contributions big number') or '--',
+        'combo': _streak_number('Current Streak big number') or '--',
+        'max_combo': _streak_number('Longest Streak big number') or '--',
+        'dots': str(dots),
+        'repos': repo_count or '--',
+    }
+
+
+def generate_snake_svg():
+    """Wrap the cached snake grid in the retro terminal frame with an arcade HUD."""
+    raw_path = os.path.join(CACHE_DIR, 'snake-raw.svg')
+    out_path = os.path.join(SVG_DIR, 'snake.svg')
+
+    if not os.path.exists(raw_path):
+        if os.path.exists(out_path):
+            print("  [stale] snake: no raw grid, keeping the existing frame")
+            with open(out_path, encoding='utf-8') as f:
+                return f.read()
+        print("  [missing] snake: no raw grid and no previous frame")
+        return None
+
+    with open(raw_path, encoding='utf-8') as f:
+        raw = f.read()
+
+    stats = read_arcade_stats(raw)
+
+    # The grid declares its own palette as CSS variables (--cs is the snake,
+    # --c4 the brightest contribution level). Reading them back means the glow
+    # always matches whatever colours the workflow asked snk for, instead of
+    # duplicating the hex codes here and drifting when one side changes.
+    palette = dict(re.findall(r'--(c[a-z0-9]):(#[0-9A-Fa-f]{3,8})', raw))
+    snake_color = palette.get('cs', '#34D399')
+    peak_color = palette.get('c4', '#38BDF8')
+
+    raw, removed = strip_snake_progress_bar(raw)
+    print(f"  [ok] snake: framed, {removed} progress-bar segments removed, "
+          f"HUD {stats['high_score']}/{stats['combo']}/{stats['max_combo']}/{stats['dots']}")
+
+    dims = re.search(r'<svg[^>]*viewBox="([^"]+)"[^>]*width="(\d+)"[^>]*height="(\d+)"', raw)
+    view_box = dims.group(1) if dims else '-16 -32 880 192'
+    grid_w = int(dims.group(2)) if dims else 880
+    grid_h = int(dims.group(3)) if dims else 192
+
+    # snk sizes its viewBox to include the progress bar. With the bar stripped
+    # that leaves ~50px of dead space under the grid, so crop to the real
+    # content instead of hardcoding a height.
+    try:
+        min_x, min_y, box_w, box_h = (float(v) for v in view_box.split())
+        # Grid cells take their 12px size from CSS and carry no height
+        # attribute, so fall back to that when a rect does not declare one.
+        bottoms = []
+        for tag in re.findall(r'<rect class="[cs][^"]*"[^>]*/>', raw):
+            y = re.search(r'\by="(-?[\d.]+)"', tag)
+            h = re.search(r'\bheight="([\d.]+)"', tag)
+            if y:
+                bottoms.append(float(y.group(1)) + (float(h.group(1)) if h else 12.0))
+        if bottoms:
+            cropped = max(bottoms) + 6 - min_y
+            if 0 < cropped < box_h:
+                view_box = f'{min_x:g} {min_y:g} {box_w:g} {cropped:g}'
+                grid_h = int(round(cropped))
+    except Exception as e:
+        print(f"  [warn] could not crop the snake viewBox: {e}")
+
+    inner = re.sub(r'^.*?<svg[^>]*>', '', raw, count=1, flags=re.S)
+    inner = re.sub(r'</svg>\s*$', '', inner, flags=re.S)
+    inner = re.sub(r'<desc>.*?</desc>', '', inner, flags=re.S)
+
+    # Glow only the snake and the cells that actually hold contributions.
+    # Filtering all 369 rects (as a group filter does) turns the grid into haze.
+    #
+    # The cell glow has to be driven by the same keyframes as the fill. A static
+    # filter would survive the cell being eaten, leaving a glowing empty box that
+    # no longer matches its neighbours. Each stop that paints a contribution
+    # colour gets the glow; each stop that returns the cell to --ce drops it.
+    lit = sorted(set(re.findall(r'<rect class="c (c[0-9a-z]+)"', inner)))
+    lit_selector = ','.join(f'.c.{cls}' for cls in lit)
+
+    eaten_stops = inner.count('fill:var(--ce)}')
+    inner = inner.replace('fill:var(--ce)}', 'fill:var(--ce);filter:none}')
+    lit_stops = len(re.findall(r'fill:var\(--c\d\)\}', inner))
+    inner = re.sub(r'fill:var\(--c(\d)\)\}',
+                   r'fill:var(--c\1);filter:url(#snakeGlowCyan)}', inner)
+    print(f"  [glow] {lit_stops} lit stops glow, {eaten_stops} eaten stops clear it")
+
+    glow_css = '.s{filter:url(#snakeGlowMint)}'
+    if lit_selector:
+        glow_css += lit_selector + '{filter:url(#snakeGlowCyan)}'
+    inner = inner.replace('</style>', glow_css + '</style>', 1)
+
+    width = 1000
+    hud_top = 60
+    grid_top = 84
+    grid_bottom = grid_top + grid_h
+    hud_bottom = grid_bottom + 34
+    height = hud_bottom + 44  # room under the HUD values, not flush to the edge
+    x_off = (width - grid_w) / 2
+
+    cells = [
+        ('COMBO', stats['combo']),
+        ('MAX COMBO', stats['max_combo']),
+        ('DOTS EATEN', stats['dots']),
+        ('REPOS', stats['repos']),
+    ]
+    span = (width - 120) / len(cells)
+    hud_cells = []
+    for i, (label, value) in enumerate(cells):
+        cx = 60 + span * i + span / 2
+        hud_cells.append(
+            f'\n    <text x="{cx:.1f}" y="{hud_bottom}" text-anchor="middle" class="hud-label">{esc(label)}</text>'
+            f'\n    <text x="{cx:.1f}" y="{hud_bottom + 18}" text-anchor="middle" class="hud-value">{esc(value)}</text>'
+        )
+        if i:
+            dx = 60 + span * i
+            hud_cells.append(
+                f'\n    <line x1="{dx:.1f}" y1="{hud_bottom - 12}" x2="{dx:.1f}" y2="{hud_bottom + 22}" '
+                'stroke="#1E293B" stroke-width="1"/>'
+            )
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+<defs>
+  <radialGradient id="snakeBgGlow" cx="50%" cy="12%" r="88%">
+    <stop offset="0%" stop-color="#0C0F17"/>
+    <stop offset="100%" stop-color="#020305"/>
+  </radialGradient>
+
+  <pattern id="snakeScanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+    <rect width="4" height="1" fill="#FFFFFF" opacity="0.025"/>
+  </pattern>
+
+  {retro_filters}
+
+  <!-- Per-cell glows. Generous regions because each cell is only 12px wide. -->
+  <filter id="snakeGlowMint" x="-150%" y="-150%" width="400%" height="400%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="2.6" result="b"/>
+    <feFlood flood-color="{snake_color}" flood-opacity="0.85" result="f"/>
+    <feComposite in="f" in2="b" operator="in" result="g"/>
+    <feMerge><feMergeNode in="g"/><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+
+  <filter id="snakeGlowCyan" x="-150%" y="-150%" width="400%" height="400%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+    <feFlood flood-color="{peak_color}" flood-opacity="0.75" result="f"/>
+    <feComposite in="f" in2="b" operator="in" result="g"/>
+    <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+
+  <clipPath id="snGlitchA"><rect x="0" y="{grid_top + 12}" width="{width}" height="26"/></clipPath>
+  <clipPath id="snGlitchB"><rect x="0" y="{grid_top + 74}" width="{width}" height="22"/></clipPath>
+  <clipPath id="snGlitchC"><rect x="0" y="{grid_top + 132}" width="{width}" height="18"/></clipPath>
+
+  <style>
+    .term-title {{ font-family: {FONT}; font-size: 12.5px; fill: #64748B; letter-spacing: 0.5px; font-weight: bold; }}
+    .hud-label  {{ font-family: {FONT}; font-size: 9.5px; fill: #475569; letter-spacing: 1.6px; font-weight: bold; }}
+    .hud-value  {{ font-family: {FONT}; font-size: 17px; fill: #38BDF8; letter-spacing: 1px; font-weight: bold; }}
+    .hud-key    {{ font-family: {FONT}; font-size: 10px; fill: #475569; letter-spacing: 1.6px; font-weight: bold; }}
+    .hud-player {{ font-family: {FONT}; font-size: 12px; fill: #34D399; letter-spacing: 0.8px; font-weight: bold; }}
+    .hud-score  {{ font-family: {FONT}; font-size: 15px; fill: #F8FAFC; letter-spacing: 1.2px; font-weight: bold; }}
+  </style>
+</defs>
+
+<!-- BASE CONTAINER & BACKGROUND -->
+<rect width="{width}" height="{height}" rx="14" fill="url(#snakeBgGlow)"/>
+<rect x="0" y="36" width="{width}" height="{height-36}" fill="url(#snakeScanlines)"/>
+
+<!-- ANCHORED TITLEBAR HEADER -->
+<g id="snakeTitlebar">
+  <path d="M 1,14 Q 1,1 14,1 L {width-14},1 Q {width-1},1 {width-1},14 L {width-1},36 L 1,36 Z" fill="#080B10"/>
+  <line x1="0" y1="36" x2="{width}" y2="36" stroke="#1E293B" stroke-width="1.2"/>
+  <circle cx="22" cy="18" r="4.5" fill="#EF4444"/>
+  <circle cx="38" cy="18" r="4.5" fill="#F59E0B"/>
+  <circle cx="54" cy="18" r="4.5" fill="#10B981"/>
+  <text x="{width/2}" y="22" text-anchor="middle" class="term-title">{PROMPT}:~/snake --contributions</text>
+</g>
+
+<!-- ARCADE HUD :: TOP ROW -->
+<g filter="url(#glowMint)">
+  <text x="40" y="{hud_top}" class="hud-key">PLAYER</text>
+  <text x="103" y="{hud_top}" class="hud-player">{esc(USERNAME)}</text>
+</g>
+<g filter="url(#glowWhite)">
+  <text x="{width-40}" y="{hud_top}" text-anchor="end" class="hud-score">{esc(stats['high_score'])}</text>
+  <text x="{width-40-(len(stats['high_score'])*10)-14}" y="{hud_top}" text-anchor="end" class="hud-key">HIGH SCORE</text>
+</g>
+
+<!-- THE CONTRIBUTION GRID (glow applied per cell, not to the whole group) -->
+<g id="snakeBody">
+  <g transform="translate({x_off}, {grid_top})">
+    <svg viewBox="{view_box}" width="{grid_w}" height="{grid_h}">{inner}</svg>
+  </g>
+</g>
+
+<!-- ARCADE HUD :: BOTTOM SCOREBOARD -->
+<line x1="40" y1="{grid_bottom + 8}" x2="{width-40}" y2="{grid_bottom + 8}" stroke="#1E293B" stroke-width="1"/>
+<g filter="url(#glowCyan)">{''.join(hud_cells)}
+</g>
+
+<!-- STABLE OUTER BORDER STROKE -->
+<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="13" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+
+<!-- RGB-SPLIT GLITCH, MATCHING THE VISITOR COUNTER -->
+<g pointer-events="none">
+  <g clip-path="url(#snGlitchA)" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0.3;1;0;0" keyTimes="0;0.40;0.42;0.44;0.46;0.48;1" dur="3.9s" repeatCount="indefinite"/>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-22 0;30 0;-7 0;0 0" keyTimes="0;0.42;0.44;0.46;0.48" dur="3.9s" repeatCount="indefinite"/>
+      <use href="#snakeBody" opacity="0.8" transform="translate(-6 0)" style="color:#00E5FF"/>
+    </g>
+  </g>
+  <g clip-path="url(#snGlitchB)" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0.25;1;0;0" keyTimes="0;0.68;0.70;0.72;0.74;0.76;1" dur="4.6s" repeatCount="indefinite"/>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;26 0;-18 0;9 0;0 0" keyTimes="0;0.70;0.72;0.74;0.76" dur="4.6s" repeatCount="indefinite"/>
+      <use href="#snakeBody" opacity="0.8" transform="translate(7 0)" style="color:#FF0055"/>
+    </g>
+  </g>
+  <g clip-path="url(#snGlitchC)" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0.2;0;0" keyTimes="0;0.86;0.88;0.90;0.92;1" dur="5.3s" repeatCount="indefinite"/>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-14 0;18 0;0 0" keyTimes="0;0.88;0.90;0.92" dur="5.3s" repeatCount="indefinite"/>
+      <use href="#snakeBody" opacity="0.7" transform="translate(-4 0)" style="color:#00E5FF"/>
+    </g>
+  </g>
+</g>
+</svg>
+"""
+
+
+# The shared retro_filters / retro_glitch_defs blocks are injected wholesale into
+# every panel, but no single panel uses all of them. Stripping the ones a panel
+# never references keeps the committed SVGs (and every profile view) smaller.
+# Only ids this script generates are considered; ids inside embedded upstream
+# cards are left untouched.
+OWN_DEF_PREFIXES = ('glow', 'glitch', 'snakeGlow', 'snGlitch', 'vGlitch', 'bodyArea')
+
+
+def prune_unused_defs(svg):
+    """Drop filter/clipPath definitions this script emits but never references."""
+    referenced = set(re.findall(r'url\(#([^)]+)\)', svg)) | set(re.findall(r'href="#([^"]+)"', svg))
+    removed = 0
+
+    def drop(match):
+        nonlocal removed
+        el_id = match.group(2)
+        if el_id.startswith(OWN_DEF_PREFIXES) and el_id not in referenced:
+            removed += 1
+            return ''
+        return match.group(0)
+
+    svg = re.sub(r'<(filter|clipPath)[^>]*id="([^"]+)"[^>]*>.*?</\1>', drop, svg, flags=re.S)
+    return svg, removed
+
+
 if __name__ == '__main__':
     dark_svg = generate_svg(is_dark=True)
     light_svg = generate_svg(is_dark=False)
     github_stats_svg = generate_github_stats_svg()
     visitor_svg = generate_visitor_counter_svg()
+    repos_svg = generate_repos_svg()
+
+    print("Framing the contribution snake...")
+    snake_svg = generate_snake_svg()
     
     os.makedirs(SVG_DIR, exist_ok=True)
     for filename, content in (
@@ -735,8 +1284,13 @@ if __name__ == '__main__':
         ('light.svg', light_svg),
         ('github_stats.svg', github_stats_svg),
         ('visitor_counter.svg', visitor_svg),
+        ('repos.svg', repos_svg),
+        *([('snake.svg', snake_svg)] if snake_svg else []),
     ):
+        content, pruned = prune_unused_defs(content)
+        if pruned:
+            print(f"  [prune] {filename}: dropped {pruned} unused definitions")
         with open(os.path.join(SVG_DIR, filename), 'w', encoding='utf-8') as f:
             f.write(content)
         
-    print(f"Successfully built dark.svg, light.svg, github_stats.svg and visitor_counter.svg into {SVG_DIR}")
+    print(f"Successfully built dark.svg, light.svg, github_stats.svg, visitor_counter.svg and repos.svg into {SVG_DIR}")

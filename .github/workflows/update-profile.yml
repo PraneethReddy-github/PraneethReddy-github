@@ -9,27 +9,50 @@ on:
       - main
     paths:
       - 'scripts/build_profile_svg.py'
+      - '.github/workflows/update-profile.yml'
+
+# Everything is produced by this one job and committed in a single push, so the
+# generators can never race each other for the same branch.
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-        
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-          
-      - name: Run SVG build script
+
+      # Runs BEFORE the Python build, which reads these raw grids and wraps them
+      # in the terminal frame. continue-on-error on purpose: if snk is down the
+      # previous raw grid stays cached and the framed panel still rebuilds.
+      - name: Generate contribution snake
+        continue-on-error: true
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          outputs: |
+            assets/cache/snake-raw.svg?color_snake=#34D399&color_dots=#1E293B,#0F3A4A,#17607C,#2196C4,#38BDF8
+
+      # Terminal header, stats frame, repo showcase, visitor counter, and the
+      # retro-framed snake (progress bar stripped, glitch overlay added).
+      - name: Build terminal panels
         run: python scripts/build_profile_svg.py
-        
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Commit and push changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -40,7 +63,7 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          
+
           # Check if last commit was by the bot
           LAST_AUTHOR=$(git log -1 --pretty=format:'%an')
           if [ "$LAST_AUTHOR" == "github-actions[bot]" ]; then

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "My-First-Portfolio",
+    "description": "Nostalgic portfolio project showcasing foundational B.Tech 1st year web development work",
+    "language": "HTML",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "DevFlow",
+    "description": "Autonomous, AI-orchestrated engineering platform automating the software development lifecycle across issue trackers, Git, and CI",
+    "language": "JavaScript",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "Morphix",
+    "description": "Offline, cross-platform desktop application for multi-format file conversion and manipulation (documents, images, video, audio, PDFs)",
+    "language": "TypeScript",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "Zero-Knowledge-Secure-Storage-System",
+    "description": "Zero-Knowledge Secure Cloud File Storage & Sharing System using RSA Challenge-Response Auth, AES-256 E2EE, and Serverless Microservices",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "CloudShare-Passwordless-Secure-Storage",
+    "description": "CloudShare: A Passwordless Cloud-Based File Storage and Sharing Framework using RSA/AES Cryptography and GCP Serverless Microservices",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "Cloud-Realtime-Anomaly-Detection",
+    "description": "Cloud-native framework for real-time network anomaly detection built upon the UNSW-NB15 dataset and deployed on GCP",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0
+  }
+]

@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="406" viewBox="0 0 1000 406">
+<defs>
+  <radialGradient id="repoBgGlow" cx="50%" cy="12%" r="88%">
+    <stop offset="0%" stop-color="#0C0F17"/>
+    <stop offset="100%" stop-color="#020305"/>
+  </radialGradient>
+
+  <pattern id="repoScanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+    <rect width="4" height="1" fill="#FFFFFF" opacity="0.025"/>
+  </pattern>
+
+  
+<!-- RETRO PHOSPHOR GLOW -->
+<filter id="glowCyan" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="blur1"/>
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur2"/>
+    <feFlood flood-color="#20DFFF" flood-opacity="0.38" result="cyanGlow"/>
+    <feComposite in="cyanGlow" in2="blur2" operator="in" result="cyanComposite"/>
+    <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="cyanComposite"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+</filter>
+
+
+
+
+
+
+  <style>
+    @keyframes repoIn {
+      0%   { opacity: 0; transform: translateX(-14px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    .term-title { font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Mono', 'Courier New', monospace; font-size: 12.5px; fill: #64748B; letter-spacing: 0.5px; font-weight: bold; }
+    .repo-arrow { font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Mono', 'Courier New', monospace; font-size: 13px; fill: #34D399; }
+    .repo-name  { font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Mono', 'Courier New', monospace; font-size: 15px; fill: #38BDF8; font-weight: bold; letter-spacing: 0.4px; }
+    .repo-meta  { font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Mono', 'Courier New', monospace; font-size: 11.5px; fill: #94A3B8; }
+    .repo-desc  { font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Mono', 'Courier New', monospace; font-size: 11.5px; fill: #64748B; }
+  </style>
+</defs>
+
+<rect width="1000" height="406" rx="14" fill="url(#repoBgGlow)"/>
+<rect x="0" y="36" width="1000" height="370" fill="url(#repoScanlines)"/>
+
+<g id="repoTitlebar">
+  <path d="M 1,14 Q 1,1 14,1 L 986,1 Q 999,1 999,14 L 999,36 L 1,36 Z" fill="#080B10"/>
+  <line x1="0" y1="36" x2="1000" y2="36" stroke="#1E293B" stroke-width="1.2"/>
+  <circle cx="22" cy="18" r="4.5" fill="#EF4444"/>
+  <circle cx="38" cy="18" r="4.5" fill="#F59E0B"/>
+  <circle cx="54" cy="18" r="4.5" fill="#10B981"/>
+  <text x="500.0" y="22" text-anchor="middle" class="term-title">praneeth@devbox:~/repos --recent</text>
+</g>
+
+<rect x="1" y="1" width="998" height="404" rx="13" fill="none" stroke="#1E293B" stroke-width="1.2"/>
+
+<g filter="url(#glowCyan)">
+  <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.15s">
+    <text x="40" y="62" class="repo-arrow">▸</text>
+    <text x="64" y="62" class="repo-name">My-First-Portfolio</text>
+    <circle cx="750" cy="57" r="4.5" fill="#E34C26"/>
+    <text x="764" y="62" class="repo-meta">HTML</text>
+    <text x="64" y="82" class="repo-desc">Nostalgic portfolio project showcasing foundational B.Tech 1st year web devel…</text>
+  </g>
+  <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.27s">
+    <text x="40" y="116" class="repo-arrow">▸</text>
+    <text x="64" y="116" class="repo-name">DevFlow</text>
+    <circle cx="750" cy="111" r="4.5" fill="#F1E05A"/>
+    <text x="764" y="116" class="repo-meta">JavaScript</text>
+    <text x="64" y="136" class="repo-desc">Autonomous, AI-orchestrated engineering platform automating the software deve…</text>
+  </g>
+  <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.39s">
+    <text x="40" y="170" class="repo-arrow">▸</text>
+    <text x="64" y="170" class="repo-name">Morphix</text>
+    <circle cx="750" cy="165" r="4.5" fill="#3178C6"/>
+    <text x="764" y="170" class="repo-meta">TypeScript</text>
+    <text x="64" y="190" class="repo-desc">Offline, cross-platform desktop application for multi-format file conversion…</text>
+  </g>
+  <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.51s">
+    <text x="40" y="224" class="repo-arrow">▸</text>
+    <text x="64" y="224" class="repo-name">Zero-Knowledge-Secure-Storage-System</text>
+    <circle cx="750" cy="219" r="4.5" fill="#3572A5"/>
+    <text x="764" y="224" class="repo-meta">Python</text>
+    <text x="64" y="244" class="repo-desc">Zero-Knowledge Secure Cloud File Storage &amp; Sharing System using RSA Challenge…</text>
+  </g>
+  <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.63s">
+    <text x="40" y="278" class="repo-arrow">▸</text>
+    <text x="64" y="278" class="repo-name">CloudShare-Passwordless-Secure-Storage</text>
+    <circle cx="750" cy="273" r="4.5" fill="#3572A5"/>
+    <text x="764" y="278" class="repo-meta">Python</text>
+    <text x="64" y="298" class="repo-desc">CloudShare: A Passwordless Cloud-Based File Storage and Sharing Framework usi…</text>
+  </g>
+  <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.75s">
+    <text x="40" y="332" class="repo-arrow">▸</text>
+    <text x="64" y="332" class="repo-name">Cloud-Realtime-Anomaly-Detection</text>
+    <circle cx="750" cy="327" r="4.5" fill="#3572A5"/>
+    <text x="764" y="332" class="repo-meta">Python</text>
+    <text x="64" y="352" class="repo-desc">Cloud-native framework for real-time network anomaly detection built upon the…</text>
+  </g>
+</g>
+</svg>
