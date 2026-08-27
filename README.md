@@ -24,12 +24,12 @@
   <!-- CYBER CAT EYES GIF -->
   <img src="./imgs/cat-eyes.gif" alt="Cyber Cat Eyes" width="100%" style="border-radius: 14px; border: 1px solid #1E293B; margin-top: 15px;">
 
-  <!-- GLOWING VISITOR COUNTER (total refreshed every 2h by CI) -->
+  <!-- GLOWING VISITOR COUNTER (total refreshed every 6h by CI) -->
   <a href="https://github.com/PraneethReddy-github">
     <img src="./visitor_counter.svg" alt="Profile Visitors" width="100%" style="margin-top: 15px;">
   </a>
 
-  <!-- Prefer a number that updates instantly instead of every 2h? Swap the
+  <!-- Prefer a number that updates instantly instead of every 6h? Swap the
        block above for this live badge (it counts and displays in one shot):
   <img src="https://komarev.com/ghpvc/?username=PraneethReddy-github&style=for-the-badge&color=38BDF8&label=PROFILE+VISITORS" alt="Profile Visitors">
   -->

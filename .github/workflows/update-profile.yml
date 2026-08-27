@@ -2,7 +2,7 @@ name: Update Profile SVGs
 
 on:
   schedule:
-    - cron: "7 */2 * * *" # Every 2 hours, so the visitor total stays fresh
+    - cron: "7 */6 * * *" # Every 6 hours, so the visitor total stays fresh
   workflow_dispatch: # Allows manual trigger
   push:
     branches:
