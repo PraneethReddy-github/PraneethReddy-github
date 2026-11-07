@@ -1270,7 +1270,6 @@ def prune_unused_defs(svg):
 
 if __name__ == '__main__':
     dark_svg = generate_svg(is_dark=True)
-    light_svg = generate_svg(is_dark=False)
     github_stats_svg = generate_github_stats_svg()
     visitor_svg = generate_visitor_counter_svg()
     repos_svg = generate_repos_svg()
@@ -1281,7 +1280,6 @@ if __name__ == '__main__':
     os.makedirs(SVG_DIR, exist_ok=True)
     for filename, content in (
         ('dark.svg', dark_svg),
-        ('light.svg', light_svg),
         ('github_stats.svg', github_stats_svg),
         ('visitor_counter.svg', visitor_svg),
         ('repos.svg', repos_svg),
@@ -1293,4 +1291,4 @@ if __name__ == '__main__':
         with open(os.path.join(SVG_DIR, filename), 'w', encoding='utf-8') as f:
             f.write(content)
         
-    print(f"Successfully built dark.svg, light.svg, github_stats.svg, visitor_counter.svg and repos.svg into {SVG_DIR}")
+    print(f"Successfully built dark.svg, github_stats.svg, visitor_counter.svg and repos.svg into {SVG_DIR}")

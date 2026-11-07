@@ -2,11 +2,7 @@
 
   <!-- RETRO PHOSPHOR TERMINAL HEADER -->
   <a href="https://github.com/PraneethReddy-github">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./assets/svg/dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="./assets/svg/light.svg">
-      <img alt="Praneeth Reddy Terminal Profile" src="./assets/svg/dark.svg" width="100%">
-    </picture>
+    <img alt="Praneeth Reddy Terminal Profile" src="./assets/svg/dark.svg" width="100%">
   </a>
 
   <!-- RETRO TERMINAL THEMED LIVE GITHUB STATS FRAME -->
