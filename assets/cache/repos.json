@@ -1,5 +1,26 @@
 [
   {
+    "name": "Pothole-Detection-And-Automated-Repair",
+    "description": "End-to-end Edge-AI robotics system for real-time pothole detection, 3D depth mapping, volume estimation, and automated repair",
+    "language": "Python",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "DevFlow",
+    "description": "Autonomous, AI-orchestrated engineering platform automating the software development lifecycle across issue trackers, Git, and CI",
+    "language": "JavaScript",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "Licence-Plate-Detection-YOLOv8",
+    "description": "High-performance Automatic License Plate Recognition (ALPR) system utilizing YOLOv8 for detection and OCR extraction",
+    "language": "Jupyter Notebook",
+    "stars": 0,
+    "forks": 0
+  },
+  {
     "name": "Knot",
     "description": "",
     "language": "JavaScript",
@@ -7,37 +28,16 @@
     "forks": 0
   },
   {
-    "name": "bloom",
-    "description": "Bloom \u2014 A floating, draggable glass bud desktop utility with a dynamic dial for interactive folder navigation",
-    "language": "JavaScript",
-    "stars": 1,
-    "forks": 0
-  },
-  {
-    "name": "PraneethReddy-Portfolio",
-    "description": "Interactive web portfolio featuring an Ubuntu 20.04 LTS Desktop Experience and iOS Mobile Interface",
-    "language": "JavaScript",
+    "name": "Secure-Client-Server-SSL-RSA-AES-QKD",
+    "description": "Multi-layered secure client-server communication suite unifying Quantum Key Distribution (QKD) and hybrid classical cryptography",
+    "language": "Python",
     "stars": 0,
     "forks": 0
   },
   {
-    "name": "ternix",
-    "description": "Ternix \u2014 One terminal. Everything. A modern cross-platform SSH & remote session manager.",
+    "name": "Hermes",
+    "description": "Self-hosted, phone-first personal command center: tasks, deadlines, calendar, notes and search in one installable web app.",
     "language": "TypeScript",
-    "stars": 5,
-    "forks": 0
-  },
-  {
-    "name": "Puff-Puff-Pass",
-    "description": "Peer-to-peer file sharing that handles very large files. Browser to browser over WebRTC, streamed straight to disk so memory stays flat.",
-    "language": "TypeScript",
-    "stars": 0,
-    "forks": 0
-  },
-  {
-    "name": "My-First-Portfolio",
-    "description": "Nostalgic portfolio project showcasing foundational B.Tech 1st year web development work",
-    "language": "HTML",
     "stars": 0,
     "forks": 0
   }
