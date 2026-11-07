@@ -58,10 +58,10 @@
 <g filter="url(#glowCyan)">
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.15s">
     <text x="40" y="62" class="repo-arrow">▸</text>
-    <text x="64" y="62" class="repo-name">Knot</text>
+    <text x="64" y="62" class="repo-name">PraneethReddy-Portfolio</text>
     <circle cx="750" cy="57" r="4.5" fill="#F1E05A"/>
     <text x="764" y="62" class="repo-meta">JavaScript</text>
-    <text x="64" y="82" class="repo-desc">no description provided</text>
+    <text x="64" y="82" class="repo-desc">Interactive web portfolio featuring an Ubuntu 20.04 LTS Desktop Experience an…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.27s">
     <text x="40" y="116" class="repo-arrow">▸</text>
@@ -72,10 +72,10 @@
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.39s">
     <text x="40" y="170" class="repo-arrow">▸</text>
-    <text x="64" y="170" class="repo-name">PraneethReddy-Portfolio</text>
+    <text x="64" y="170" class="repo-name">Knot</text>
     <circle cx="750" cy="165" r="4.5" fill="#F1E05A"/>
     <text x="764" y="170" class="repo-meta">JavaScript</text>
-    <text x="64" y="190" class="repo-desc">Interactive web portfolio featuring an Ubuntu 20.04 LTS Desktop Experience an…</text>
+    <text x="64" y="190" class="repo-desc">no description provided</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.51s">
     <text x="40" y="224" class="repo-arrow">▸</text>
