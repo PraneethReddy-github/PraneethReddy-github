@@ -1,7 +1,14 @@
 [
   {
-    "name": "Knot",
-    "description": "",
+    "name": "Spider",
+    "description": "See how your codebase is connected: a semantic code graph and interactive map for TypeScript, Python, Go, Rust, Java, Kotlin and C#",
+    "language": "TypeScript",
+    "stars": 0,
+    "forks": 0
+  },
+  {
+    "name": "PraneethReddy-Portfolio",
+    "description": "Interactive web portfolio featuring an Ubuntu 20.04 LTS Desktop Experience and iOS Mobile Interface",
     "language": "JavaScript",
     "stars": 0,
     "forks": 0
@@ -14,8 +21,8 @@
     "forks": 0
   },
   {
-    "name": "PraneethReddy-Portfolio",
-    "description": "Interactive web portfolio featuring an Ubuntu 20.04 LTS Desktop Experience and iOS Mobile Interface",
+    "name": "Knot",
+    "description": "",
     "language": "JavaScript",
     "stars": 0,
     "forks": 0
@@ -31,13 +38,6 @@
     "name": "Puff-Puff-Pass",
     "description": "Peer-to-peer file sharing that handles very large files. Browser to browser over WebRTC, streamed straight to disk so memory stays flat.",
     "language": "TypeScript",
-    "stars": 0,
-    "forks": 0
-  },
-  {
-    "name": "My-First-Portfolio",
-    "description": "Nostalgic portfolio project showcasing foundational B.Tech 1st year web development work",
-    "language": "HTML",
     "stars": 0,
     "forks": 0
   }

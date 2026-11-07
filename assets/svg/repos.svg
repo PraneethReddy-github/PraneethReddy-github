@@ -58,45 +58,45 @@
 <g filter="url(#glowCyan)">
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.15s">
     <text x="40" y="62" class="repo-arrow">▸</text>
-    <text x="64" y="62" class="repo-name">Knot</text>
-    <circle cx="750" cy="57" r="4.5" fill="#F1E05A"/>
-    <text x="764" y="62" class="repo-meta">JavaScript</text>
-    <text x="64" y="82" class="repo-desc">no description provided</text>
+    <text x="64" y="62" class="repo-name">Spider</text>
+    <circle cx="750" cy="57" r="4.5" fill="#3178C6"/>
+    <text x="764" y="62" class="repo-meta">TypeScript</text>
+    <text x="64" y="82" class="repo-desc">See how your codebase is connected: a semantic code graph and interactive map…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.27s">
     <text x="40" y="116" class="repo-arrow">▸</text>
-    <text x="64" y="116" class="repo-name">bloom</text>
+    <text x="64" y="116" class="repo-name">PraneethReddy-Portfolio</text>
     <circle cx="750" cy="111" r="4.5" fill="#F1E05A"/>
-    <text x="764" y="116" class="repo-meta">JavaScript  │  ★ 1</text>
-    <text x="64" y="136" class="repo-desc">Bloom — A floating, draggable glass bud desktop utility with a dynamic dial f…</text>
+    <text x="764" y="116" class="repo-meta">JavaScript</text>
+    <text x="64" y="136" class="repo-desc">Interactive web portfolio featuring an Ubuntu 20.04 LTS Desktop Experience an…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.39s">
     <text x="40" y="170" class="repo-arrow">▸</text>
-    <text x="64" y="170" class="repo-name">PraneethReddy-Portfolio</text>
+    <text x="64" y="170" class="repo-name">bloom</text>
     <circle cx="750" cy="165" r="4.5" fill="#F1E05A"/>
-    <text x="764" y="170" class="repo-meta">JavaScript</text>
-    <text x="64" y="190" class="repo-desc">Interactive web portfolio featuring an Ubuntu 20.04 LTS Desktop Experience an…</text>
+    <text x="764" y="170" class="repo-meta">JavaScript  │  ★ 1</text>
+    <text x="64" y="190" class="repo-desc">Bloom — A floating, draggable glass bud desktop utility with a dynamic dial f…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.51s">
     <text x="40" y="224" class="repo-arrow">▸</text>
-    <text x="64" y="224" class="repo-name">ternix</text>
-    <circle cx="750" cy="219" r="4.5" fill="#3178C6"/>
-    <text x="764" y="224" class="repo-meta">TypeScript  │  ★ 5</text>
-    <text x="64" y="244" class="repo-desc">Ternix — One terminal. Everything. A modern cross-platform SSH &amp; remote sessi…</text>
+    <text x="64" y="224" class="repo-name">Knot</text>
+    <circle cx="750" cy="219" r="4.5" fill="#F1E05A"/>
+    <text x="764" y="224" class="repo-meta">JavaScript</text>
+    <text x="64" y="244" class="repo-desc">no description provided</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.63s">
     <text x="40" y="278" class="repo-arrow">▸</text>
-    <text x="64" y="278" class="repo-name">Puff-Puff-Pass</text>
+    <text x="64" y="278" class="repo-name">ternix</text>
     <circle cx="750" cy="273" r="4.5" fill="#3178C6"/>
-    <text x="764" y="278" class="repo-meta">TypeScript</text>
-    <text x="64" y="298" class="repo-desc">Peer-to-peer file sharing that handles very large files. Browser to browser o…</text>
+    <text x="764" y="278" class="repo-meta">TypeScript  │  ★ 5</text>
+    <text x="64" y="298" class="repo-desc">Ternix — One terminal. Everything. A modern cross-platform SSH &amp; remote sessi…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.75s">
     <text x="40" y="332" class="repo-arrow">▸</text>
-    <text x="64" y="332" class="repo-name">My-First-Portfolio</text>
-    <circle cx="750" cy="327" r="4.5" fill="#E34C26"/>
-    <text x="764" y="332" class="repo-meta">HTML</text>
-    <text x="64" y="352" class="repo-desc">Nostalgic portfolio project showcasing foundational B.Tech 1st year web devel…</text>
+    <text x="64" y="332" class="repo-name">Puff-Puff-Pass</text>
+    <circle cx="750" cy="327" r="4.5" fill="#3178C6"/>
+    <text x="764" y="332" class="repo-meta">TypeScript</text>
+    <text x="64" y="352" class="repo-desc">Peer-to-peer file sharing that handles very large files. Browser to browser o…</text>
   </g>
 </g>
 </svg>
