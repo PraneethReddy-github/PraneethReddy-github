@@ -143,8 +143,10 @@ def build_retro_terminal_content():
 
     # EDUCATION
     education = [
-        (162, "┌─", "DEGREE", "B.Tech in Computer Science & Engineering", 1.48),
-        (186, "└─", "INST.",  "Amrita Vishwa Vidyapeetham (2021 – 2025)", 1.78),
+        (162, "┌─", "DEGREE", "M.Sc. Cybersecurity", 1.48),
+        (186, "└─", "INST.",  "Saarland University (2026 – Present)", 1.70),
+        (210, "┌─", "DEGREE", "B.Tech in Computer Science & Engineering", 1.92),
+        (234, "└─", "INST.",  "Amrita Vishwa Vidyapeetham (2021 – 2025)", 2.14),
     ]
     for i, (y, branch, key, value, delay) in enumerate(education):
         pieces = [
@@ -158,16 +160,16 @@ def build_retro_terminal_content():
         content.append(body)
 
     # COMMAND 3: SKILLS
-    clip, body = command_line(222, "./skills.sh --summary", 2.38, 3)
+    clip, body = command_line(270,"./skills.sh --summary", 2.38, 3)
     clips.append(clip)
     content.append(body)
 
     # SKILLS
     skills = [
-        (246, "Core Tech",   "Python, Go, C++, TypeScript, Rust, Linux, GCP",    2.68),
-        (270, "Security",    "Cryptography, ZK-Proofs, QKD, PenTesting, NetSec", 2.98),
-        (294, "DevOps/Cloud","Docker, Kubernetes, Terraform, CI/CD, Microservices", 3.28),
-        (318, "Hardware",    "LoRa Mesh, ESP32 Microcontrollers, Raspberry Pi",  3.58),
+        (294, "Core Tech",   "Python, Go, C++, TypeScript, Rust, Linux, GCP",    2.68),
+        (318, "Security",   "Cryptography, ZK-Proofs, QKD, PenTesting, NetSec", 2.98),
+        (342, "DevOps/Cloud","Docker, Kubernetes, Terraform, CI/CD, Microservices", 3.28),
+        (366, "Hardware",    "LoRa Mesh, ESP32 Microcontrollers, Raspberry Pi",  3.58),
     ]
     for i, (y, key, value, delay) in enumerate(skills):
         pieces = [
@@ -181,16 +183,16 @@ def build_retro_terminal_content():
         content.append(body)
 
     # COMMAND 4: PROJECTS
-    clip, body = command_line(354, "cat ~/.projects", 4.05, 4)
+    clip, body = command_line(402,"cat ~/.projects", 4.05, 4)
     clips.append(clip)
     content.append(body)
 
     # FEATURED PROJECTS
     projects = [
-        (378, "[01]", "Ternix    ", "Cross-Platform SSH & Remote Session Manager",   4.35),
-        (402, "[02]", "Bloom     ", "Floating Desktop Widget & Voice Dictation",       4.65),
-        (426, "[03]", "DevFlow   ", "Interactive Visual Developer Workflow Platform", 4.95),
-        (450, "[04]", "CloudShare", "Passwordless Zero-Knowledge File Storage",        5.25),
+        (426, "[01]", "Ternix    ", "Cross-Platform SSH & Remote Session Manager",   4.35),
+        (450, "[02]", "Bloom     ", "Floating Desktop Widget & Voice Dictation",       4.65),
+        (474, "[03]", "DevFlow   ", "Interactive Visual Developer Workflow Platform", 4.95),
+        (498, "[04]", "CloudShare", "Passwordless Zero-Knowledge File Storage",        5.25),
     ]
     for i, (y, number, proj, desc, delay) in enumerate(projects):
         pieces = [
@@ -204,14 +206,14 @@ def build_retro_terminal_content():
         content.append(body)
 
     # COMMAND 5: CONTACT
-    clip, body = command_line(486, "./contact.sh", 5.75, 5)
+    clip, body = command_line(534,"./contact.sh", 5.75, 5)
     clips.append(clip)
     content.append(body)
 
     contacts = [
-        (510, "Email",    CONTACT_EMAIL,                         6.05),
-        (534, "LinkedIn", CONTACT_LINKEDIN,                      6.35),
-        (558, "GitHub",   f"github.com/{USERNAME}",              6.65),
+        (558, "Email",    CONTACT_EMAIL,                         6.05),
+        (582, "LinkedIn", CONTACT_LINKEDIN,                      6.35),
+        (606, "GitHub",   f"github.com/{USERNAME}",              6.65),
     ]
     for i, (y, key, value, delay) in enumerate(contacts):
         pieces = [
@@ -225,7 +227,7 @@ def build_retro_terminal_content():
         content.append(body)
 
     # FINAL PROMPT
-    final_y = 596
+    final_y = 644
     final_clip_id = "final_prompt_clip"
     final_clip = reveal_clip(final_clip_id, final_y, 7.10)
     clips.append(final_clip)
@@ -255,12 +257,12 @@ def build_retro_terminal_content():
 retro_glitch_defs = """
 <clipPath id="glitchA"><rect x="0" y="60" width="1000" height="24"/></clipPath>
 <clipPath id="glitchB"><rect x="0" y="126" width="1000" height="35"/></clipPath>
-<clipPath id="glitchC"><rect x="0" y="196" width="1000" height="40"/></clipPath>
-<clipPath id="glitchD"><rect x="0" y="263" width="1000" height="35"/></clipPath>
-<clipPath id="glitchE"><rect x="0" y="334" width="1000" height="45"/></clipPath>
-<clipPath id="glitchF"><rect x="0" y="414" width="1000" height="50"/></clipPath>
-<clipPath id="glitchG"><rect x="0" y="474" width="1000" height="40"/></clipPath>
-<clipPath id="glitchH"><rect x="0" y="548" width="1000" height="45"/></clipPath>
+<clipPath id="glitchC"><rect x="0" y="244" width="1000" height="40"/></clipPath>
+<clipPath id="glitchD"><rect x="0" y="311" width="1000" height="35"/></clipPath>
+<clipPath id="glitchE"><rect x="0" y="382" width="1000" height="45"/></clipPath>
+<clipPath id="glitchF"><rect x="0" y="462" width="1000" height="50"/></clipPath>
+<clipPath id="glitchG"><rect x="0" y="522" width="1000" height="40"/></clipPath>
+<clipPath id="glitchH"><rect x="0" y="596" width="1000" height="45"/></clipPath>
 
 """
 
@@ -348,7 +350,7 @@ def build_glitch(master_id="terminalContent"):
 
     <g opacity="0">
         <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.62;0.64;0.69" dur="5.2s" repeatCount="indefinite"/>
-        <rect x="450" y="240" width="400" height="14" fill="#FF0055" opacity="0.9">
+        <rect x="450" y="288" width="400" height="14" fill="#FF0055" opacity="0.9">
             <animateTransform attributeName="transform" type="translate" values="0 0;-80 0;45 0;0 0" dur="5.2s" repeatCount="indefinite"/>
         </rect>
     </g>
@@ -366,8 +368,8 @@ def build_glitch(master_id="terminalContent"):
 
 def generate_svg(is_dark=True):
     width = 1000
-    height = 660
-    
+    height = 708
+
     if is_dark:
         bg_start = "#0C0F17"
         bg_end = "#020305"
@@ -396,7 +398,7 @@ def generate_svg(is_dark=True):
     <rect width="4" height="1" fill="#FFFFFF" opacity="{scanline_op}"/>
   </pattern>
 
-  <clipPath id="bodyArea"><rect x="0" y="40" width="{width}" height="620"/></clipPath>
+  <clipPath id="bodyArea"><rect x="0" y="40" width="{width}" height="{height-40}"/></clipPath>
 
 {retro_filters}
 
@@ -432,7 +434,7 @@ def generate_svg(is_dark=True):
 
 <!-- TERMINAL BODY BACKGROUND SCANLINES -->
 <g clip-path="url(#bodyArea)">
-  <rect x="0" y="40" width="{width}" height="620" fill="url(#scanlines)"/>
+  <rect x="0" y="40" width="{width}" height="{height-40}" fill="url(#scanlines)"/>
 </g>
 
 <!-- STABLE ANCHORED DARK TITLEBAR HEADER -->
