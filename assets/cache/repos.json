@@ -1,5 +1,12 @@
 [
   {
+    "name": "stellio",
+    "description": "Local-first Linux desktop career agent: daily job discovery, truthful tailored LaTeX resumes and cover letters, skill audit, referrals and an application tracker.",
+    "language": "TypeScript",
+    "stars": 0,
+    "forks": 0
+  },
+  {
     "name": "Pothole-Detection-And-Automated-Repair",
     "description": "End-to-end Edge-AI robotics system for real-time pothole detection, 3D depth mapping, volume estimation, and automated repair",
     "language": "Python",
@@ -31,13 +38,6 @@
     "name": "Secure-Client-Server-SSL-RSA-AES-QKD",
     "description": "Multi-layered secure client-server communication suite unifying Quantum Key Distribution (QKD) and hybrid classical cryptography",
     "language": "Python",
-    "stars": 0,
-    "forks": 0
-  },
-  {
-    "name": "Hermes",
-    "description": "Self-hosted, phone-first personal command center: tasks, deadlines, calendar, notes and search in one installable web app.",
-    "language": "TypeScript",
     "stars": 0,
     "forks": 0
   }

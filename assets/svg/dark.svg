@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="660" viewBox="0 0 1000 660">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="708" viewBox="0 0 1000 708">
 <defs>
   <radialGradient id="bgGlow" cx="50%" cy="15%" r="85%">
     <stop offset="0%" stop-color="#0C0F17"/>
@@ -9,7 +9,7 @@
     <rect width="4" height="1" fill="#FFFFFF" opacity="0.025"/>
   </pattern>
 
-  <clipPath id="bodyArea"><rect x="0" y="40" width="1000" height="620"/></clipPath>
+  <clipPath id="bodyArea"><rect x="0" y="40" width="1000" height="668"/></clipPath>
 
 
 <!-- RETRO PHOSPHOR GLOW -->
@@ -71,12 +71,12 @@
 
 <clipPath id="glitchA"><rect x="0" y="60" width="1000" height="24"/></clipPath>
 <clipPath id="glitchB"><rect x="0" y="126" width="1000" height="35"/></clipPath>
-<clipPath id="glitchC"><rect x="0" y="196" width="1000" height="40"/></clipPath>
-<clipPath id="glitchD"><rect x="0" y="263" width="1000" height="35"/></clipPath>
-<clipPath id="glitchE"><rect x="0" y="334" width="1000" height="45"/></clipPath>
-<clipPath id="glitchF"><rect x="0" y="414" width="1000" height="50"/></clipPath>
-<clipPath id="glitchG"><rect x="0" y="474" width="1000" height="40"/></clipPath>
-<clipPath id="glitchH"><rect x="0" y="548" width="1000" height="45"/></clipPath>
+<clipPath id="glitchC"><rect x="0" y="244" width="1000" height="40"/></clipPath>
+<clipPath id="glitchD"><rect x="0" y="311" width="1000" height="35"/></clipPath>
+<clipPath id="glitchE"><rect x="0" y="382" width="1000" height="45"/></clipPath>
+<clipPath id="glitchF"><rect x="0" y="462" width="1000" height="50"/></clipPath>
+<clipPath id="glitchG"><rect x="0" y="522" width="1000" height="40"/></clipPath>
+<clipPath id="glitchH"><rect x="0" y="596" width="1000" height="45"/></clipPath>
 
 
 
@@ -84,30 +84,32 @@
 <clipPath id="row_clip_10">    <rect x="30" y="82" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="0.72s" fill="freeze"/>    </rect></clipPath>
 <clipPath id="cmd_clip_2">    <rect x="30" y="118" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="1.15s" fill="freeze"/>    </rect></clipPath>
 <clipPath id="row_clip_20">    <rect x="30" y="142" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="1.48s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_21">    <rect x="30" y="166" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="1.78s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="cmd_clip_3">    <rect x="30" y="202" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="2.38s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_40">    <rect x="30" y="226" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="2.68s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_41">    <rect x="30" y="250" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="2.98s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_42">    <rect x="30" y="274" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="3.28s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_43">    <rect x="30" y="298" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="3.58s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="cmd_clip_4">    <rect x="30" y="334" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.05s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_60">    <rect x="30" y="358" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.35s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_61">    <rect x="30" y="382" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.65s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_62">    <rect x="30" y="406" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.95s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_63">    <rect x="30" y="430" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="5.25s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="cmd_clip_5">    <rect x="30" y="466" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="5.75s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_80">    <rect x="30" y="490" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="6.05s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_81">    <rect x="30" y="514" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="6.35s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="row_clip_82">    <rect x="30" y="538" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="6.65s" fill="freeze"/>    </rect></clipPath>
-<clipPath id="final_prompt_clip">    <rect x="30" y="576" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="7.1s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_21">    <rect x="30" y="166" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="1.7s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_22">    <rect x="30" y="190" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="1.92s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_23">    <rect x="30" y="214" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="2.14s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="cmd_clip_3">    <rect x="30" y="250" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="2.38s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_40">    <rect x="30" y="274" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="2.68s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_41">    <rect x="30" y="298" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="2.98s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_42">    <rect x="30" y="322" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="3.28s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_43">    <rect x="30" y="346" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="3.58s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="cmd_clip_4">    <rect x="30" y="382" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.05s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_60">    <rect x="30" y="406" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.35s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_61">    <rect x="30" y="430" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.65s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_62">    <rect x="30" y="454" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="4.95s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_63">    <rect x="30" y="478" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="5.25s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="cmd_clip_5">    <rect x="30" y="514" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="5.75s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_80">    <rect x="30" y="538" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="6.05s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_81">    <rect x="30" y="562" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="6.35s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="row_clip_82">    <rect x="30" y="586" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="6.65s" fill="freeze"/>    </rect></clipPath>
+<clipPath id="final_prompt_clip">    <rect x="30" y="624" width="0" height="28">        <animate attributeName="width" from="0" to="940" dur="0.35s" begin="7.1s" fill="freeze"/>    </rect></clipPath>
 </defs>
 
 <!-- BASE CONTAINER & BACKGROUND -->
-<rect width="1000" height="660" rx="14" fill="url(#bgGlow)"/>
+<rect width="1000" height="708" rx="14" fill="url(#bgGlow)"/>
 
 <!-- TERMINAL BODY BACKGROUND SCANLINES -->
 <g clip-path="url(#bodyArea)">
-  <rect x="0" y="40" width="1000" height="620" fill="url(#scanlines)"/>
+  <rect x="0" y="40" width="1000" height="668" fill="url(#scanlines)"/>
 </g>
 
 <!-- STABLE ANCHORED DARK TITLEBAR HEADER -->
@@ -127,7 +129,7 @@
 </g>
 
 <!-- STABLE OUTER BORDER STROKE -->
-<rect x="1" y="1" width="998" height="658" rx="13" fill="none" stroke="#1E293B" stroke-width="1.2">
+<rect x="1" y="1" width="998" height="706" rx="13" fill="none" stroke="#1E293B" stroke-width="1.2">
   <animate attributeName="stroke-opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
 </rect>
 
@@ -136,29 +138,31 @@
 <g clip-path="url(#cmd_clip_1)">    <g filter="url(#glowWhite)">        <text x="36" y="78" class="prompt-user">praneeth@devbox</text>        <text x="173" y="78" class="prompt-sep">:</text>        <text x="184" y="78" class="prompt-path">~$</text>        <text x="214" y="78" class="command">whoami</text>    </g></g>
 <g clip-path="url(#row_clip_10)">    <g filter="url(#glowCyan)">        <text x="48" y="102" class="name">PRANEETH REDDY</text><line x1="238" y1="97" x2="448" y2="97" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="102" class="value">Software Developer | Cyber Security | DevOps Engineer</text>    </g></g>
 <g clip-path="url(#cmd_clip_2)">    <g filter="url(#glowWhite)">        <text x="36" y="138" class="prompt-user">praneeth@devbox</text>        <text x="173" y="138" class="prompt-sep">:</text>        <text x="184" y="138" class="prompt-path">~$</text>        <text x="214" y="138" class="command">cat ~/.education</text>    </g></g>
-<g clip-path="url(#row_clip_20)">    <g filter="url(#glowCyan)">        <text x="48" y="162" class="branch">┌─</text><text x="82" y="162" class="key">DEGREE</text><line x1="155" y1="157" x2="448" y2="157" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="162" class="value">B.Tech in Computer Science &amp; Engineering</text>    </g></g>
-<g clip-path="url(#row_clip_21)">    <g filter="url(#glowCyan)">        <text x="48" y="186" class="branch">└─</text><text x="82" y="186" class="key">INST.</text><line x1="155" y1="181" x2="448" y2="181" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="186" class="value">Amrita Vishwa Vidyapeetham (2021 – 2025)</text>    </g></g>
-<g clip-path="url(#cmd_clip_3)">    <g filter="url(#glowWhite)">        <text x="36" y="222" class="prompt-user">praneeth@devbox</text>        <text x="173" y="222" class="prompt-sep">:</text>        <text x="184" y="222" class="prompt-path">~$</text>        <text x="214" y="222" class="command">./skills.sh --summary</text>    </g></g>
-<g clip-path="url(#row_clip_40)">    <g filter="url(#glowCyan)">        <text x="48" y="246" class="tag">[+]</text><text x="92" y="246" class="key">Core Tech</text><line x1="205" y1="241" x2="448" y2="241" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="246" class="value">Python, Go, C++, TypeScript, Rust, Linux, GCP</text>    </g></g>
-<g clip-path="url(#row_clip_41)">    <g filter="url(#glowCyan)">        <text x="48" y="270" class="tag">[+]</text><text x="92" y="270" class="key">Security</text><line x1="205" y1="265" x2="448" y2="265" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="270" class="value">Cryptography, ZK-Proofs, QKD, PenTesting, NetSec</text>    </g></g>
-<g clip-path="url(#row_clip_42)">    <g filter="url(#glowCyan)">        <text x="48" y="294" class="tag">[+]</text><text x="92" y="294" class="key">DevOps/Cloud</text><line x1="205" y1="289" x2="448" y2="289" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="294" class="value">Docker, Kubernetes, Terraform, CI/CD, Microservices</text>    </g></g>
-<g clip-path="url(#row_clip_43)">    <g filter="url(#glowCyan)">        <text x="48" y="318" class="tag">[+]</text><text x="92" y="318" class="key">Hardware</text><line x1="205" y1="313" x2="448" y2="313" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="318" class="value">LoRa Mesh, ESP32 Microcontrollers, Raspberry Pi</text>    </g></g>
-<g clip-path="url(#cmd_clip_4)">    <g filter="url(#glowWhite)">        <text x="36" y="354" class="prompt-user">praneeth@devbox</text>        <text x="173" y="354" class="prompt-sep">:</text>        <text x="184" y="354" class="prompt-path">~$</text>        <text x="214" y="354" class="command">cat ~/.projects</text>    </g></g>
-<g clip-path="url(#row_clip_60)">    <g filter="url(#glowCyan)">        <text x="48" y="378" class="muted-bold">[01]</text><text x="95" y="378" class="venue">Ternix    </text><line x1="210" y1="373" x2="448" y2="373" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="378" class="value">Cross-Platform SSH &amp; Remote Session Manager</text>    </g></g>
-<g clip-path="url(#row_clip_61)">    <g filter="url(#glowCyan)">        <text x="48" y="402" class="muted-bold">[02]</text><text x="95" y="402" class="venue">Bloom     </text><line x1="210" y1="397" x2="448" y2="397" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="402" class="value">Floating Desktop Widget &amp; Voice Dictation</text>    </g></g>
-<g clip-path="url(#row_clip_62)">    <g filter="url(#glowCyan)">        <text x="48" y="426" class="muted-bold">[03]</text><text x="95" y="426" class="venue">DevFlow   </text><line x1="210" y1="421" x2="448" y2="421" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="426" class="value">Interactive Visual Developer Workflow Platform</text>    </g></g>
-<g clip-path="url(#row_clip_63)">    <g filter="url(#glowCyan)">        <text x="48" y="450" class="muted-bold">[04]</text><text x="95" y="450" class="venue">CloudShare</text><line x1="210" y1="445" x2="448" y2="445" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="450" class="value">Passwordless Zero-Knowledge File Storage</text>    </g></g>
-<g clip-path="url(#cmd_clip_5)">    <g filter="url(#glowWhite)">        <text x="36" y="486" class="prompt-user">praneeth@devbox</text>        <text x="173" y="486" class="prompt-sep">:</text>        <text x="184" y="486" class="prompt-path">~$</text>        <text x="214" y="486" class="command">./contact.sh</text>    </g></g>
-<g clip-path="url(#row_clip_80)">    <g filter="url(#glowCyan)">        <text x="48" y="510" class="key">Email</text><text x="125" y="510" class="arrow">›</text><line x1="150" y1="505" x2="448" y2="505" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="510" class="value">connectwithpraneeth@gmail.com</text>    </g></g>
-<g clip-path="url(#row_clip_81)">    <g filter="url(#glowCyan)">        <text x="48" y="534" class="key">LinkedIn</text><text x="125" y="534" class="arrow">›</text><line x1="150" y1="529" x2="448" y2="529" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="534" class="value">linkedin.com/in/connectwithpraneeth</text>    </g></g>
-<g clip-path="url(#row_clip_82)">    <g filter="url(#glowCyan)">        <text x="48" y="558" class="key">GitHub</text><text x="125" y="558" class="arrow">›</text><line x1="150" y1="553" x2="448" y2="553" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="558" class="value">github.com/PraneethReddy-github</text>    </g></g>
-<g clip-path="url(#final_prompt_clip)">    <g filter="url(#glowMint)">        <text x="36" y="596" class="prompt-user">praneeth@devbox</text>        <text x="173" y="596" class="prompt-sep">:</text>        <text x="184" y="596" class="prompt-path">~$</text>    </g></g>
+<g clip-path="url(#row_clip_20)">    <g filter="url(#glowCyan)">        <text x="48" y="162" class="branch">┌─</text><text x="82" y="162" class="key">DEGREE</text><line x1="155" y1="157" x2="448" y2="157" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="162" class="value">M.Sc. Cybersecurity</text>    </g></g>
+<g clip-path="url(#row_clip_21)">    <g filter="url(#glowCyan)">        <text x="48" y="186" class="branch">└─</text><text x="82" y="186" class="key">INST.</text><line x1="155" y1="181" x2="448" y2="181" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="186" class="value">Saarland University (Oct 2026 – Present)</text>    </g></g>
+<g clip-path="url(#row_clip_22)">    <g filter="url(#glowCyan)">        <text x="48" y="210" class="branch">┌─</text><text x="82" y="210" class="key">DEGREE</text><line x1="155" y1="205" x2="448" y2="205" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="210" class="value">B.Tech in Computer Science &amp; Engineering</text>    </g></g>
+<g clip-path="url(#row_clip_23)">    <g filter="url(#glowCyan)">        <text x="48" y="234" class="branch">└─</text><text x="82" y="234" class="key">INST.</text><line x1="155" y1="229" x2="448" y2="229" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="234" class="value">Amrita Vishwa Vidyapeetham (2021 – 2025)</text>    </g></g>
+<g clip-path="url(#cmd_clip_3)">    <g filter="url(#glowWhite)">        <text x="36" y="270" class="prompt-user">praneeth@devbox</text>        <text x="173" y="270" class="prompt-sep">:</text>        <text x="184" y="270" class="prompt-path">~$</text>        <text x="214" y="270" class="command">./skills.sh --summary</text>    </g></g>
+<g clip-path="url(#row_clip_40)">    <g filter="url(#glowCyan)">        <text x="48" y="294" class="tag">[+]</text><text x="92" y="294" class="key">Core Tech</text><line x1="205" y1="289" x2="448" y2="289" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="294" class="value">Python, Go, C++, TypeScript, Rust, Linux, GCP</text>    </g></g>
+<g clip-path="url(#row_clip_41)">    <g filter="url(#glowCyan)">        <text x="48" y="318" class="tag">[+]</text><text x="92" y="318" class="key">Security</text><line x1="205" y1="313" x2="448" y2="313" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="318" class="value">Cryptography, ZK-Proofs, QKD, PenTesting, NetSec</text>    </g></g>
+<g clip-path="url(#row_clip_42)">    <g filter="url(#glowCyan)">        <text x="48" y="342" class="tag">[+]</text><text x="92" y="342" class="key">DevOps/Cloud</text><line x1="205" y1="337" x2="448" y2="337" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="342" class="value">Docker, Kubernetes, Terraform, CI/CD, Microservices</text>    </g></g>
+<g clip-path="url(#row_clip_43)">    <g filter="url(#glowCyan)">        <text x="48" y="366" class="tag">[+]</text><text x="92" y="366" class="key">Hardware</text><line x1="205" y1="361" x2="448" y2="361" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="366" class="value">LoRa Mesh, ESP32 Microcontrollers, Raspberry Pi</text>    </g></g>
+<g clip-path="url(#cmd_clip_4)">    <g filter="url(#glowWhite)">        <text x="36" y="402" class="prompt-user">praneeth@devbox</text>        <text x="173" y="402" class="prompt-sep">:</text>        <text x="184" y="402" class="prompt-path">~$</text>        <text x="214" y="402" class="command">cat ~/.projects</text>    </g></g>
+<g clip-path="url(#row_clip_60)">    <g filter="url(#glowCyan)">        <text x="48" y="426" class="muted-bold">[01]</text><text x="95" y="426" class="venue">Ternix    </text><line x1="210" y1="421" x2="448" y2="421" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="426" class="value">Cross-Platform SSH &amp; Remote Session Manager</text>    </g></g>
+<g clip-path="url(#row_clip_61)">    <g filter="url(#glowCyan)">        <text x="48" y="450" class="muted-bold">[02]</text><text x="95" y="450" class="venue">Bloom     </text><line x1="210" y1="445" x2="448" y2="445" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="450" class="value">Floating Desktop Widget &amp; Voice Dictation</text>    </g></g>
+<g clip-path="url(#row_clip_62)">    <g filter="url(#glowCyan)">        <text x="48" y="474" class="muted-bold">[03]</text><text x="95" y="474" class="venue">DevFlow   </text><line x1="210" y1="469" x2="448" y2="469" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="474" class="value">Interactive Visual Developer Workflow Platform</text>    </g></g>
+<g clip-path="url(#row_clip_63)">    <g filter="url(#glowCyan)">        <text x="48" y="498" class="muted-bold">[04]</text><text x="95" y="498" class="venue">CloudShare</text><line x1="210" y1="493" x2="448" y2="493" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="498" class="value">Passwordless Zero-Knowledge File Storage</text>    </g></g>
+<g clip-path="url(#cmd_clip_5)">    <g filter="url(#glowWhite)">        <text x="36" y="534" class="prompt-user">praneeth@devbox</text>        <text x="173" y="534" class="prompt-sep">:</text>        <text x="184" y="534" class="prompt-path">~$</text>        <text x="214" y="534" class="command">./contact.sh</text>    </g></g>
+<g clip-path="url(#row_clip_80)">    <g filter="url(#glowCyan)">        <text x="48" y="558" class="key">Email</text><text x="125" y="558" class="arrow">›</text><line x1="150" y1="553" x2="448" y2="553" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="558" class="value">connectwithpraneeth@gmail.com</text>    </g></g>
+<g clip-path="url(#row_clip_81)">    <g filter="url(#glowCyan)">        <text x="48" y="582" class="key">LinkedIn</text><text x="125" y="582" class="arrow">›</text><line x1="150" y1="577" x2="448" y2="577" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="582" class="value">linkedin.com/in/connectwithpraneeth</text>    </g></g>
+<g clip-path="url(#row_clip_82)">    <g filter="url(#glowCyan)">        <text x="48" y="606" class="key">GitHub</text><text x="125" y="606" class="arrow">›</text><line x1="150" y1="601" x2="448" y2="601" stroke="#475569" stroke-width="1" stroke-linecap="round" stroke-dasharray="1 7" opacity="0.52"/><text x="470" y="606" class="value">github.com/PraneethReddy-github</text>    </g></g>
+<g clip-path="url(#final_prompt_clip)">    <g filter="url(#glowMint)">        <text x="36" y="644" class="prompt-user">praneeth@devbox</text>        <text x="173" y="644" class="prompt-sep">:</text>        <text x="184" y="644" class="prompt-path">~$</text>    </g></g>
 </g>
 
 <!-- FINAL CURSOR -->
 
 <g filter="url(#glowMint)">
-    <rect x="214" y="581" width="9" height="17" rx="1" class="cursor" opacity="0">
+    <rect x="214" y="629" width="9" height="17" rx="1" class="cursor" opacity="0">
         <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.01;0.05;0.45;0.5;1" dur="1.15s" begin="7.50s" repeatCount="indefinite"/>
     </rect>
 </g>
@@ -248,7 +252,7 @@
 
     <g opacity="0">
         <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.62;0.64;0.69" dur="5.2s" repeatCount="indefinite"/>
-        <rect x="450" y="240" width="400" height="14" fill="#FF0055" opacity="0.9">
+        <rect x="450" y="288" width="400" height="14" fill="#FF0055" opacity="0.9">
             <animateTransform attributeName="transform" type="translate" values="0 0;-80 0;45 0;0 0" dur="5.2s" repeatCount="indefinite"/>
         </rect>
     </g>

@@ -58,45 +58,45 @@
 <g filter="url(#glowCyan)">
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.15s">
     <text x="40" y="62" class="repo-arrow">▸</text>
-    <text x="64" y="62" class="repo-name">Pothole-Detection-And-Automated-Repair</text>
-    <circle cx="750" cy="57" r="4.5" fill="#3572A5"/>
-    <text x="764" y="62" class="repo-meta">Python</text>
-    <text x="64" y="82" class="repo-desc">End-to-end Edge-AI robotics system for real-time pothole detection, 3D depth…</text>
+    <text x="64" y="62" class="repo-name">stellio</text>
+    <circle cx="750" cy="57" r="4.5" fill="#3178C6"/>
+    <text x="764" y="62" class="repo-meta">TypeScript</text>
+    <text x="64" y="82" class="repo-desc">Local-first Linux desktop career agent: daily job discovery, truthful tailore…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.27s">
     <text x="40" y="116" class="repo-arrow">▸</text>
-    <text x="64" y="116" class="repo-name">DevFlow</text>
-    <circle cx="750" cy="111" r="4.5" fill="#F1E05A"/>
-    <text x="764" y="116" class="repo-meta">JavaScript</text>
-    <text x="64" y="136" class="repo-desc">Autonomous, AI-orchestrated engineering platform automating the software deve…</text>
+    <text x="64" y="116" class="repo-name">Pothole-Detection-And-Automated-Repair</text>
+    <circle cx="750" cy="111" r="4.5" fill="#3572A5"/>
+    <text x="764" y="116" class="repo-meta">Python</text>
+    <text x="64" y="136" class="repo-desc">End-to-end Edge-AI robotics system for real-time pothole detection, 3D depth…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.39s">
     <text x="40" y="170" class="repo-arrow">▸</text>
-    <text x="64" y="170" class="repo-name">Licence-Plate-Detection-YOLOv8</text>
-    <circle cx="750" cy="165" r="4.5" fill="#DA5B0B"/>
-    <text x="764" y="170" class="repo-meta">Jupyter Notebook</text>
-    <text x="64" y="190" class="repo-desc">High-performance Automatic License Plate Recognition (ALPR) system utilizing…</text>
+    <text x="64" y="170" class="repo-name">DevFlow</text>
+    <circle cx="750" cy="165" r="4.5" fill="#F1E05A"/>
+    <text x="764" y="170" class="repo-meta">JavaScript</text>
+    <text x="64" y="190" class="repo-desc">Autonomous, AI-orchestrated engineering platform automating the software deve…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.51s">
     <text x="40" y="224" class="repo-arrow">▸</text>
-    <text x="64" y="224" class="repo-name">Knot</text>
-    <circle cx="750" cy="219" r="4.5" fill="#F1E05A"/>
-    <text x="764" y="224" class="repo-meta">JavaScript</text>
-    <text x="64" y="244" class="repo-desc">no description provided</text>
+    <text x="64" y="224" class="repo-name">Licence-Plate-Detection-YOLOv8</text>
+    <circle cx="750" cy="219" r="4.5" fill="#DA5B0B"/>
+    <text x="764" y="224" class="repo-meta">Jupyter Notebook</text>
+    <text x="64" y="244" class="repo-desc">High-performance Automatic License Plate Recognition (ALPR) system utilizing…</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.63s">
     <text x="40" y="278" class="repo-arrow">▸</text>
-    <text x="64" y="278" class="repo-name">Secure-Client-Server-SSL-RSA-AES-QKD</text>
-    <circle cx="750" cy="273" r="4.5" fill="#3572A5"/>
-    <text x="764" y="278" class="repo-meta">Python</text>
-    <text x="64" y="298" class="repo-desc">Multi-layered secure client-server communication suite unifying Quantum Key D…</text>
+    <text x="64" y="278" class="repo-name">Knot</text>
+    <circle cx="750" cy="273" r="4.5" fill="#F1E05A"/>
+    <text x="764" y="278" class="repo-meta">JavaScript</text>
+    <text x="64" y="298" class="repo-desc">no description provided</text>
   </g>
   <g style="opacity:0; animation: repoIn 0.45s ease-out forwards 0.75s">
     <text x="40" y="332" class="repo-arrow">▸</text>
-    <text x="64" y="332" class="repo-name">Hermes</text>
-    <circle cx="750" cy="327" r="4.5" fill="#3178C6"/>
-    <text x="764" y="332" class="repo-meta">TypeScript</text>
-    <text x="64" y="352" class="repo-desc">Self-hosted, phone-first personal command center: tasks, deadlines, calendar,…</text>
+    <text x="64" y="332" class="repo-name">Secure-Client-Server-SSL-RSA-AES-QKD</text>
+    <circle cx="750" cy="327" r="4.5" fill="#3572A5"/>
+    <text x="764" y="332" class="repo-meta">Python</text>
+    <text x="64" y="352" class="repo-desc">Multi-layered secure client-server communication suite unifying Quantum Key D…</text>
   </g>
 </g>
 </svg>
